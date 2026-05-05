@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ORDA - May Kim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">May Kim</a>
+    <button class="menu-button" type="button" aria-label="메뉴 열기" aria-expanded="false">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="index.html#home">홈</a>
+      <a href="index.html#about">소개</a>
+      <a href="index.html#skills">기술</a>
+      <a class="active" href="index.html#projects">프로젝트</a>
+      <a href="index.html#education">교육</a>
+      <a href="index.html#contact">연락처</a>
+    </nav>
+  </header>
+  <main class="detail-main">
+    <a class="back-link" href="index.html#projects"><span class="material-symbols-outlined">arrow_back</span> 프로젝트로 돌아가기</a>
+    <section class="detail-hero">
+      <div>
+        <p class="eyebrow">Team Project</p>
+        <h1>ORDA</h1>
+        <p class="hero-line">등산의 모든 흐름을 하나로 연결하는 서비스</p>
+        <p>탐색, 기록, 인증, 회고를 연결하는 모바일 웹 서비스입니다. 사용자가 등산 코스를 계획하고, 실제 등반 데이터를 기록하며, 완료 후 데이터를 기반으로 성취를 인증할 수 있도록 설계했습니다.</p>
+      </div>
+      <aside class="panel">
+        <h3>My Role</h3>
+        <p>고도 데이터 처리 로직, 세션 상세 및 리플레이 뷰, 공통 API 아키텍처 설계를 담당했습니다.</p>
+      </aside>
+    </section>
+    <section class="detail-grid">
+      <div class="panel">
+        <h2>Problem Solving</h2>
+        <div class="feature-list">
+          <article><h3>GPS 데이터 보정</h3><p>모바일 GPS 노이즈와 튀는 좌표를 줄이기 위한 필터링 로직을 적용했습니다.</p></article>
+          <article><h3>DEM 기반 고도 처리</h3><p>좌표 기반 고도 보정 파이프라인으로 고도 프로필 정확도를 개선했습니다.</p></article>
+          <article><h3>OOM 이슈 해결</h3><p>대용량 트랙 로그를 스트리밍 파싱과 청크 단위 저장으로 처리했습니다.</p></article>
+        </div>
+      </div>
+      <aside class="panel">
+        <h2>Tech Stack</h2>
+        <div class="tags">
+          <span>React</span><span>TypeScript</span><span>Spring Boot</span><span>PostgreSQL</span><span>PostGIS</span><span>Docker</span><span>Cloud Run</span><span>Supabase</span>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

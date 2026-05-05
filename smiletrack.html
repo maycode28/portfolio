@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmileTrack - May Kim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">May Kim</a>
+    <button class="menu-button" type="button" aria-label="메뉴 열기" aria-expanded="false">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="index.html#home">홈</a>
+      <a href="index.html#about">소개</a>
+      <a href="index.html#skills">기술</a>
+      <a class="active" href="index.html#projects">프로젝트</a>
+      <a href="index.html#education">교육</a>
+      <a href="index.html#contact">연락처</a>
+    </nav>
+  </header>
+  <main class="detail-main">
+    <a class="back-link" href="index.html#projects"><span class="material-symbols-outlined">arrow_back</span> 프로젝트로 돌아가기</a>
+    <section class="detail-hero">
+      <div>
+        <p class="eyebrow">Project Report</p>
+        <h1>SmileTrack</h1>
+        <p class="hero-line">케이스 관리와 프로세스를 연결하는 시스템</p>
+        <p>치기공소 내부 케이스 관리 및 작업 흐름 추적 웹 서비스입니다. 케이스 상태 추적, 표준 프로세스 관리, 직원 권한 기반 배정, 로그 및 이력 관리를 중심으로 구성했습니다.</p>
+      </div>
+      <aside class="panel">
+        <h3>Technology Stack</h3>
+        <div class="tags">
+          <span>Spring Boot</span><span>JPA</span><span>React</span><span>MariaDB</span>
+        </div>
+      </aside>
+    </section>
+    <div class="detail-image">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaC-7k8WZhx-m8T9YteTKGnlEtl1zKzAmeGa6IdKboi-Q-PFiILccY85PTo9NHzOHcQDEczElNmEyghJyu0V8IGKXoAA-hDN1-mQdb6YfKSD1ISrwZ7r3JuVnxsSKlESuH7HT5DzIPzEUe5N0Ss0i7B_J9nlq7j19wz6Mhe95dfZkkRZxCQ-b80Sk8fkur0QW6ixwK_-FS9j4k4hUIKZRys6BX5VmORO96zQFlofKy61tNKk9On4buLbuqOcP-QZ7_Y1lSzQx1yA" alt="SmileTrack 대시보드 화면">
+    </div>
+    <section class="detail-grid">
+      <div class="panel">
+        <h2>Core Features</h2>
+        <div class="feature-list">
+          <article><h3>케이스 상태 추적</h3><p>각 케이스의 진행 상황을 모니터링하고 추적합니다.</p></article>
+          <article><h3>프로세스 관리</h3><p>표준화된 작업 흐름을 정의하고 단계별 관리를 지원합니다.</p></article>
+          <article><h3>직원 권한 기반 배정</h3><p>역할과 권한에 따라 작업 배정 흐름을 관리합니다.</p></article>
+          <article><h3>로그 및 이력 관리</h3><p>활동과 변경 사항을 기록해 추적 가능성을 높입니다.</p></article>
+        </div>
+      </div>
+      <aside class="panel">
+        <h2>Highlights</h2>
+        <p><strong>MyBatis → JPA 전환</strong></p>
+        <p>데이터 접근 계층의 생산성과 유지보수성을 높이기 위해 ORM을 도입하고 쿼리 구조를 개선했습니다.</p>
+        <p><strong>데이터 기반 프로세스 설계</strong></p>
+        <p>작업 흐름의 유연성을 확보하기 위해 프로세스 단위를 데이터화했습니다.</p>
+      </aside>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

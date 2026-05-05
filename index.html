@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="김지현(May Kim) 풀스택 개발자 포트폴리오">
+  <title>김지현 (May Kim) - Full-Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home">May Kim</a>
+    <button class="menu-button" type="button" aria-label="메뉴 열기" aria-expanded="false">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="#home">홈</a>
+      <a href="#about">소개</a>
+      <a href="#skills">기술</a>
+      <a href="#projects">프로젝트</a>
+      <a href="#education">교육</a>
+      <a href="#contact">연락처</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="hero-copy">
+        <p class="eyebrow">Full-Stack Developer</p>
+        <h1>김지현 <span>(May Kim)</span></h1>
+        <p class="hero-line">AI와 웹 기술을 활용해 사용자 문제를 구조적으로 해결하는 개발자</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">프로젝트 보기</a>
+          <a class="button secondary" href="https://github.com/maykim" target="_blank" rel="noreferrer">
+            <span class="material-symbols-outlined">code</span>
+            GitHub
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="개발자 작업 환경 이미지">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-5VaW7QlvFm0cv26UKsPBLKrVULE8Zl7vjl3kQU8AtelwW60gsEbPze2sNvfpkQJJokPfOOV0peWrQj71GXpl5ou9LjOe33H2u-NeXS98I52EBuv0fxzhj-bOt5M6peh0e-0NEFZJ0OZjKiJpXpSuQIkHQNm9pctiK-LAsO7-VVrULH87b-LXmQUeKArAA4vWose6bHIzHF66EYGOR3QFbF_fEcgHCYq7r-DGFHZeSSYMWTBCCtHUnttC19Ez37vyhyM8HXjowA" alt="코드와 데이터 화면이 놓인 개발자 작업 공간">
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-head">
+        <p class="eyebrow">About</p>
+        <h2>문제 해결 중심의 풀스택 개발자</h2>
+      </div>
+      <div class="about-grid">
+        <article class="panel about-main">
+          <h3>철학</h3>
+          <p>저는 단순한 코딩을 넘어 비즈니스와 사용자의 문제를 해결하는 것에 집중합니다. 프론트엔드의 세밀한 사용자 경험부터 백엔드의 견고한 아키텍처, 인공지능 모델 연동까지 시스템 전체를 조망하며 최적의 솔루션을 설계합니다.</p>
+          <p>최신 기술을 맹목적으로 쫓기보다는 요구사항에 맞는 도구를 선택하고, 안정적이며 확장 가능한 시스템을 만드는 것을 선호합니다.</p>
+        </article>
+        <aside class="panel profile-panel">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_SpKGj5NB70BnGjH-qjoTvcKs6Muysyuha5IGmtVlRiz1dJEoJ-oDMJoDqPClqqdZf8fnbFFtX44yDZnG72Nxq3hbm4eXJkmMDW7JHxH_2wwn4RR_ro_5THDyoF51AL5h1ah2YJwlakT-zVDqHqD6ySft2tJ0QKLE1YraJAsB5rjI252HXDgkH1idcxiH1d4b2JljM3rI97pYAe7E6g5ji9msAqxkhvDigqNvkBoJLL2F9H23KILH-BrHXuaNpUCCHch3siHezg" alt="김지현 프로필 이미지">
+          <h3>김지현</h3>
+          <p>Full-Stack Engineer</p>
+          <div class="mini-tags">
+            <span>Seoul, KR</span>
+            <span>Java / Spring</span>
+          </div>
+        </aside>
+      </div>
+      <div class="value-grid">
+        <article class="panel">
+          <span class="material-symbols-outlined">architecture</span>
+          <h3>구조적 설계</h3>
+          <p>복잡한 비즈니스 로직을 명확하고 유지보수 가능한 아키텍처로 구현합니다.</p>
+        </article>
+        <article class="panel">
+          <span class="material-symbols-outlined">psychology</span>
+          <h3>AI 통합</h3>
+          <p>LLM을 웹 서비스에 연동해 사용자가 체감할 수 있는 기능으로 만듭니다.</p>
+        </article>
+        <article class="panel">
+          <span class="material-symbols-outlined">speed</span>
+          <h3>성능 최적화</h3>
+          <p>데이터베이스 쿼리부터 렌더링까지 전 구간의 병목을 추적하고 개선합니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Skills</p>
+        <h2>기술 스택</h2>
+      </div>
+      <div class="skill-grid">
+        <article class="panel skill-card">
+          <span class="material-symbols-outlined">desktop_windows</span>
+          <h3>Frontend</h3>
+          <ul>
+            <li>HTML / CSS / JavaScript</li>
+            <li>React / TypeScript</li>
+            <li>Vite / Fetch / Axios</li>
+            <li>반응형 UI</li>
+          </ul>
+        </article>
+        <article class="panel skill-card">
+          <span class="material-symbols-outlined">dns</span>
+          <h3>Backend</h3>
+          <ul>
+            <li>Java / Spring Boot</li>
+            <li>JSP / Tomcat</li>
+            <li>JPA / Hibernate</li>
+            <li>REST API / Session Auth</li>
+          </ul>
+        </article>
+        <article class="panel skill-card">
+          <span class="material-symbols-outlined">database</span>
+          <h3>Database</h3>
+          <ul>
+            <li>MySQL / MariaDB</li>
+            <li>PostgreSQL / Supabase</li>
+            <li>SQL / 테이블 설계</li>
+            <li>쿼리 최적화</li>
+          </ul>
+        </article>
+        <article class="panel skill-card">
+          <span class="material-symbols-outlined">smart_toy</span>
+          <h3>AI & Infra</h3>
+          <ul>
+            <li>Gemini / OpenAI</li>
+            <li>Prompt Engineering</li>
+            <li>Docker / Railway</li>
+            <li>Vercel / Cloud Run</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Projects</p>
+        <h2>프로젝트</h2>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card project-featured">
+          <div class="project-copy">
+            <p class="badge">개인 프로젝트</p>
+            <h3>SmileTrack</h3>
+            <p>케이스 관리와 프로세스를 연결하는 치기공소 내부 케이스 관리 및 작업 흐름 추적 웹 서비스.</p>
+            <div class="tags">
+              <span>Spring Boot</span><span>JPA</span><span>React</span><span>MariaDB</span>
+            </div>
+            <a class="button primary compact" href="smiletrack.html">상세 보기</a>
+          </div>
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_WDjNzy4AI0jyvPN53AoqUzRun5_j8S421IeqbcH9B_UsZ2L-B2dfkTsuVizFCk2Opg_CWQARh3U2cPU8ygNZyWAj8e68kihSwr4c3QP3tWNHcRiek4ncuXJ9lOP4f23K_8PQ5KMv1g2NzaR7OEnhj068_2QBSdk2_DPUS6yW0lyCaVX6CRrIImeil-inGl5CiPBfBypFkYrbuNWKZefaXRedKBRbGSA_IcOfr3PPKcFWR1MRu_l0zEfxjn7GZGXEmzLsYPkVUA" alt="SmileTrack 대시보드 미리보기">
+        </article>
+        <article class="project-card">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnfsQbdCEGLmTkZ5Hdd_DY0LsxLP9ch7Gr7mz-Eea0Hy3c3hpx0nC9XxYcCKZx5NLTuiofCZrO8Wj6ZBKMF0nv6iRzoVdwMt_Y1OWH8d-hphGuz2BvHvZI0wuxGzNPDTNbBD0q6wzV9Fu7X7olpCu5xGMKKOupWtl0-tod6NkhAb0-9hQwHlk8K6juyClE85bfOPGj_XG3cNj3v4gAXDub87y9wbeBx--SK3HVKo94Oamt4w6sTHytLz8lDCeW6d3zbTYarrTfGA" alt="ORDA 프로젝트 미리보기">
+          <div class="project-copy">
+            <p class="badge">팀 프로젝트</p>
+            <h3>ORDA</h3>
+            <p>탐색, 기록, 인증, 회고를 연결하는 등산 모바일 웹 서비스.</p>
+            <div class="tags">
+              <span>React</span><span>TypeScript</span><span>Spring Boot</span><span>PostGIS</span>
+            </div>
+            <a class="button secondary compact" href="orda.html">상세 보기</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-PkbFNYvBhYKuvboYRmDJp0X678uyY8fn1YpIUs06xKKg6aq-AcxyMcfi_MMaLCEkSHZ998x4VeJ9mNvKFYZbkuSYYG-YNWxBAgxXe7wFdSvYtYJwL5GJQzXk7cjq3rE-MCvLOXILXZ_aEgU4C7tkGDofIUiSzOGYRK0-CXzBnSh_QOoyBemaSqwy1zEMtnwioOlBcGHTjFWZMEnN0p9oW7boMwco0HVBTEvpspPwfV4EMCgtZj7DzcdHGt6occk5fG8u7ekp3w" alt="oopsLog AI 분석 미리보기">
+          <div class="project-copy">
+            <p class="badge">AI 프로젝트</p>
+            <h3>oopsLog</h3>
+            <p>AI 기반 인지 왜곡 분석 및 사고 재구성 서비스.</p>
+            <div class="tags">
+              <span>React</span><span>Spring Boot</span><span>Gemini</span><span>OpenAI</span>
+            </div>
+            <a class="button secondary compact" href="oopslog.html">상세 보기</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Education</p>
+        <h2>교육 과정</h2>
+      </div>
+      <div class="timeline">
+        <article>
+          <span>Step 1</span>
+          <h3>Java Foundation</h3>
+          <p>객체지향 프로그래밍, 자료구조, 예외 처리를 학습했습니다.</p>
+        </article>
+        <article>
+          <span>Step 2</span>
+          <h3>Database & Web Basics</h3>
+          <p>MySQL, SQL, HTML, CSS, JavaScript 기반의 웹 개발 흐름을 익혔습니다.</p>
+        </article>
+        <article>
+          <span>Step 3</span>
+          <h3>Spring Framework</h3>
+          <p>Spring Boot, MVC, JPA/Hibernate를 활용해 서버 애플리케이션을 구현했습니다.</p>
+        </article>
+        <article>
+          <span>Step 4</span>
+          <h3>Final Team Project & React</h3>
+          <p>팀 프로젝트와 React SPA 개발을 통해 기획부터 배포까지 경험했습니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <p class="eyebrow">Contact</p>
+      <h2>서비스 전체 흐름을 이해하고 구현하는 개발자입니다.</h2>
+      <p>새로운 도전을 환영하며, 함께 성장할 수 있는 기회를 기다리고 있습니다.</p>
+      <div class="contact-grid">
+        <a class="panel contact-card" href="mailto:hello@example.com">
+          <span class="material-symbols-outlined">mail</span>
+          <strong>Email</strong>
+          <span>hello@example.com</span>
+        </a>
+        <a class="panel contact-card" href="https://github.com/maykim" target="_blank" rel="noreferrer">
+          <span class="material-symbols-outlined">code</span>
+          <strong>GitHub</strong>
+          <span>github.com/maykim</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <strong>May Kim</strong>
+    <span>© 2026 Kim Ji-hyun. All rights reserved.</span>
+    <div>
+      <a href="https://github.com/maykim" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="mailto:hello@example.com">Email</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

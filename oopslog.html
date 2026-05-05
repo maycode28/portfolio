@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>oopsLog - May Kim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">May Kim</a>
+    <button class="menu-button" type="button" aria-label="메뉴 열기" aria-expanded="false">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="index.html#home">홈</a>
+      <a href="index.html#about">소개</a>
+      <a href="index.html#skills">기술</a>
+      <a class="active" href="index.html#projects">프로젝트</a>
+      <a href="index.html#education">교육</a>
+      <a href="index.html#contact">연락처</a>
+    </nav>
+  </header>
+  <main class="detail-main">
+    <a class="back-link" href="index.html#projects"><span class="material-symbols-outlined">arrow_back</span> 프로젝트로 돌아가기</a>
+    <section class="detail-hero">
+      <div>
+        <p class="eyebrow">AI Service</p>
+        <h1>oopsLog</h1>
+        <p class="hero-line">실패를 기록하는 순간, 생각이 바뀌는 경험</p>
+        <p>사용자가 실패나 부정적인 경험을 기록하면 AI가 사실과 감정을 분리하고, 인지 왜곡을 탐지하며, 더 현실적인 사고 재구성을 돕는 서비스입니다.</p>
+      </div>
+      <aside class="panel">
+        <h3>AI Stack</h3>
+        <p>Primary AI Engine: Gemini</p>
+        <p>Fallback System: OpenAI API</p>
+      </aside>
+    </section>
+    <section class="detail-grid">
+      <div class="panel">
+        <h2>Core Features</h2>
+        <div class="feature-list">
+          <article><h3>Fact Extraction</h3><p>주관적 감정과 객관적 사실을 분리합니다.</p></article>
+          <article><h3>Distortion Detection</h3><p>흑백논리, 과잉일반화 등 인지 왜곡 패턴을 식별합니다.</p></article>
+          <article><h3>Reframing</h3><p>더 건설적이고 현실적인 관점의 대안을 제시합니다.</p></article>
+          <article><h3>JSON 구조 응답</h3><p>AI 분석 결과를 정형화해 시스템 연동성을 높입니다.</p></article>
+        </div>
+      </div>
+      <aside class="panel">
+        <h2>Output Example</h2>
+        <pre>{
+  "fact_extraction": {
+    "subject": "Presentation failure",
+    "facts": ["Missed deadline", "Client requested changes"]
+  },
+  "distortion": "All-or-nothing thinking",
+  "reframing": "A delay does not mean the project is a failure."
+}</pre>
+      </aside>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
