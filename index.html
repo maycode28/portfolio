@@ -1,243 +1,847 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="김지현(May Kim) 풀스택 개발자 포트폴리오">
-  <title>김지현 (May Kim) - Full-Stack Developer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="#home">May Kim</a>
-    <button class="menu-button" type="button" aria-label="메뉴 열기" aria-expanded="false">
-      <span class="material-symbols-outlined">menu</span>
-    </button>
-    <nav class="site-nav" aria-label="주요 메뉴">
-      <a href="#home">홈</a>
-      <a href="#about">소개</a>
-      <a href="#skills">기술</a>
-      <a href="#projects">프로젝트</a>
-      <a href="#education">교육</a>
-      <a href="#contact">연락처</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="김지현(Jihyeon Kim, May Kim) 풀스택 개발자 포트폴리오"
+    />
+    <title>김지현 (Jihyeon Kim / May Kim) - Full-Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .exp-grid {
+        display: grid;
+        gap: 18px;
+        margin-top: 18px;
+      }
+      .exp-item {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 20px;
+        padding: 20px 24px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+      .exp-period {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 600;
+        padding-top: 3px;
+        line-height: 1.5;
+      }
+      .exp-body h3 {
+        margin-bottom: 4px;
+        font-size: 16px;
+      }
+      .exp-body p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .exp-role {
+        display: inline-block;
+        margin-bottom: 8px;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--subtle);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .quote-block {
+        margin: 0 0 32px;
+        padding: 22px 28px;
+        border-left: 3px solid var(--primary);
+        background: var(--surface-soft);
+        border-radius: 0 8px 8px 0;
+      }
+      .quote-block p {
+        margin: 0;
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 1.6;
+        color: var(--text);
+      }
+      .edu-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-bottom: 24px;
+      }
+      .edu-card {
+        padding: 20px 22px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+      .edu-card h3 {
+        margin-bottom: 4px;
+        font-size: 16px;
+      }
+      .edu-card p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .edu-card .exp-role {
+        margin-bottom: 6px;
+      }
+      @media (max-width: 720px) {
+        .exp-item {
+          grid-template-columns: 1fr;
+          gap: 6px;
+        }
+        .edu-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <site-header></site-header>
+    <main>
+      <section id="home" class="hero section">
+        <div class="hero-copy">
+          <p class="eyebrow">Full-Stack Developer</p>
+          <h1>
+            <span data-ko="김지현" data-en="Jihyeon Kim">김지현</span>
+            <span data-ko="(May Kim)" data-en="(May Kim)">(May Kim)</span>
+          </h1>
+          <p
+            class="hero-line"
+            data-ko="당연해 보이는 불편함에 의문을 던지고, 본질적인 솔루션을 구현하는 개발자"
+            data-en="A developer who questions seemingly normal inconveniences to implement essential solutions"
+          >
+            당연해 보이는 불편함에 의문을 던지고, 본질적인 솔루션을 구현하는
+            개발자
+          </p>
+          <div class="hero-actions">
+            <a
+              class="button primary"
+              href="#projects"
+              data-ko="프로젝트 보기"
+              data-en="View Projects"
+              >프로젝트 보기</a
+            >
+            <a
+              class="button secondary"
+              href="https://github.com/maycode28"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="material-symbols-outlined">code</span>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="개발자 작업 환경 이미지">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-5VaW7QlvFm0cv26UKsPBLKrVULE8Zl7vjl3kQU8AtelwW60gsEbPze2sNvfpkQJJokPfOOV0peWrQj71GXpl5ou9LjOe33H2u-NeXS98I52EBuv0fxzhj-bOt5M6peh0e-0NEFZJ0OZjKiJpXpSuQIkHQNm9pctiK-LAsO7-VVrULH87b-LXmQUeKArAA4vWose6bHIzHF66EYGOR3QFbF_fEcgHCYq7r-DGFHZeSSYMWTBCCtHUnttC19Ez37vyhyM8HXjowA"
+            alt="코드와 데이터 화면이 놓인 개발자 작업 공간"
+          />
+        </div>
+      </section>
 
-  <main>
-    <section id="home" class="hero section">
-      <div class="hero-copy">
-        <p class="eyebrow">Full-Stack Developer</p>
-        <h1>김지현 <span>(May Kim)</span></h1>
-        <p class="hero-line">AI와 웹 기술을 활용해 사용자 문제를 구조적으로 해결하는 개발자</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#projects">프로젝트 보기</a>
-          <a class="button secondary" href="https://github.com/maykim" target="_blank" rel="noreferrer">
+      <section id="about" class="section">
+        <div class="section-head">
+          <p class="eyebrow" data-ko="소개" data-en="About">소개</p>
+          <h2
+            data-ko="문제를 정의하면, 해결책이 보입니다"
+            data-en="Define the problem, and the solution appears"
+          >
+            문제를 정의하면, 해결책이 보입니다
+          </h2>
+        </div>
+
+        <div class="about-grid">
+          <article class="panel about-main">
+            <div class="quote-block">
+              <p
+                data-ko='"현장에서 발견한 비효율을 정의하고 가진 지식을 총동원해 풀어내던 몰입의 감각, 이제는 코드라는 강력한 도구로 이어갑니다."'
+                data-en='"The thrill of identifying workplace inefficiencies and utilizing every bit of knowledge to resolve them—I am now channeling that same focus into the power of code."'
+              >
+                "현장에서 발견한 비효율을 정의하고 가진 지식을 총동원해 풀어내던
+                몰입의 감각, 이제는 코드라는 강력한 도구로 이어갑니다."
+              </p>
+            </div>
+            <p
+              data-ko="기계공학 전공 후 한국과 캐나다에서 제조, 치기공, 물류 현장에서 다양한 경험을 했고, 여러 불편함과 비효율을 직접 경험하고 발견해왔습니다. 특히 치기공소에서 Dental CAD 프로그램을 사용할 당시, 추후 작업을 일일이 손으로 해야 하는 번거로움을 해결하고자 기본 제공되지 않는 3D 모델을 디자인 결과물에 덧붙여 한 번에 출력하고 싶었습니다. 기존에 제공되는 프롭의 config 파일을 분석하고 수많은 실험을 거쳐 마침내 작동법을 찾아냈습니다. 현상의 본질을 뜯어보고 실질적인 해답을 찾아가는 과정에서 처음으로 일이 재미있다는 깊은 몰입감을 느꼈고, 이는 개발자로의 전환을 결정한 확실한 도화선이 되었습니다."
+              data-en="After studying mechanical engineering and working in manufacturing, dental labs, and logistics, I experienced firsthand the repetitive gaps and obstacles that exist in real workplaces. In particular, while using Dental CAD software at a dental lab, I wanted to register a custom 3D model as a printable prop to eliminate the need for manual post-processing. To achieve this, I analyzed existing config files and experimented persistently until I successfully integrated the custom components. Tracing the root cause to engineer a practical solution gave me a profound sense of fulfillment, serving as the definitive catalyst for my transition into software development."
+            >
+              기계공학 전공 후 한국과 캐나다에서 제조, 치기공, 물류 현장에서
+              다양한 경험을 했고, 여러 불편함과 비효율을 직접 경험하고
+              발견해왔습니다. 특히 치기공소에서 Dental CAD 프로그램을 사용할
+              당시, 추후 작업을 일일이 손으로 해야 하는 번거로움을 해결하고자
+              기본 제공되지 않는 3D 모델을 디자인 결과물에 덧붙여 한 번에
+              출력하고 싶었습니다. 기존에 제공되는 프롭의 config 파일을 분석하고
+              수많은 실험을 거쳐 마침내 작동법을 찾아냈습니다. 현상의 본질을
+              뜯어보고 실질적인 해답을 찾아가는 과정에서 처음으로 일이
+              재미있다는 깊은 몰입감을 느꼈고, 이는 개발자로의 전환을 결정한
+              확실한 도화선이 되었습니다.
+            </p>
+            <p
+              data-ko="귀국 후 풀스택 개발자 양성과정을 수료하며 Java, Spring Boot, React 등을 학습했고, SmileTrack, ORDA, oopsLog 등의 프로젝트로 실무 감각을 쌓고 있습니다. 현장 경험에서 비롯된 '구조적으로 현상을 바라보는 시각'이 저의 가장 큰 차별점입니다."
+              data-en="After returning to Korea, I completed a full-stack developer training program, studying Java, Spring Boot, and React, and have been building hands-on experience through projects like SmileTrack, ORDA, and oopsLog. My greatest differentiator is the structured, systems-first perspective I developed through years of real-world work experience."
+            >
+              귀국 후 풀스택 개발자 양성과정을 수료하며 Java, Spring Boot, React
+              등을 학습했고, SmileTrack, ORDA, oopsLog 등의 프로젝트로 실무
+              감각을 쌓고 있습니다. 현장 경험에서 비롯된 '구조적으로 현상을
+              바라보는 시각'이 저의 가장 큰 차별점입니다.
+            </p>
+          </article>
+          <aside class="panel profile-panel">
+            <img src="images/profile-image.jpg" alt="김지현 프로필 이미지" />
+            <h3>김지현</h3>
+            <p>Jihyeon Kim · May Kim</p>
+            <p>Full-Stack Engineer</p>
+            <div class="mini-tags">
+              <span>Daejeon, KR</span>
+              <span>Java / Spring</span>
+              <span>TOEIC 990</span>
+            </div>
+          </aside>
+        </div>
+
+        <h3
+          style="margin-bottom: 14px"
+          data-ko="경력 및 경험"
+          data-en="Work Experience"
+        >
+          경력 및 경험
+        </h3>
+        <div class="exp-grid">
+          <div class="exp-item">
+            <div class="exp-period">2026.04</div>
+            <div class="exp-body">
+              <span class="exp-role" data-ko="공모전" data-en="Competition"
+                >공모전</span
+              >
+              <h3>
+                <a href="oopslog.html" class="item-link title-link">oopsLog</a>
+              </h3>
+              <p
+                data-ko="친구와 2인 팀으로 공모전 출품을 위해 React, Spring Boot, Gemini 및 OpenAI API를 활용하여 개발한 AI 서비스입니다. 실패 경험을 기록하면 AI가 인지 왜곡을 탐지하고 사고를 재구성해줘 유의미한 경험으로 남길 수 있게 해주는 웹앱을 만들었습니다."
+                data-en="An AI service built with a friend for a competition using React, Spring Boot, Gemini, and OpenAI API. A CBT-based tool where AI detects cognitive distortions and helps reframe thinking from logged failure experiences."
+              >
+                친구와 2인 팀으로 공모전 출품을 위해 React, Spring Boot, Gemini
+                및 OpenAI API를 활용하여 개발한 AI 서비스입니다. 실패 경험을
+                기록하면 AI가 인지 왜곡을 탐지하고 사고를 재구성해줘 유의미한
+                경험으로 남길 수 있게 해주는 웹앱을 만들었습니다.
+              </p>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-period">2025.11 - 2026.04</div>
+            <div class="exp-body">
+              <span class="exp-role" data-ko="교육" data-en="Education"
+                >교육</span
+              >
+              <h3>
+                <a
+                  href="#education"
+                  class="item-link title-link"
+                  data-ko="공공데이터 융합 풀스택 개발자 양성과정"
+                  data-en="Full-Stack Developer Bootcamp"
+                  >공공데이터 융합 풀스택 개발자 양성과정</a
+                >
+              </h3>
+              <p
+                data-ko="코리아IT아카데미에서 Java, Spring Boot, React, JPA, MySQL 등을 학습하고 팀, 개인 프로젝트를 통해 개발 역량을 키웠습니다."
+                data-en="Korea IT Academy · Studied Java, Spring Boot, React, JPA, and MySQL, and developed practical skills through team and solo projects."
+              >
+                코리아IT아카데미에서 Java, Spring Boot, React, JPA, MySQL 등을
+                학습하고 팀, 개인 프로젝트를 통해 개발 역량을 키웠습니다.
+              </p>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-period">2024.10 - 2024.12</div>
+            <div class="exp-body">
+              <span class="exp-role" data-ko="경력" data-en="Work">경력</span>
+              <h3>KTX Transport</h3>
+              <p
+                data-ko="캐나다 3PL 물류회사에서 실시간 화물 운행 현황 모니터링 및 디스패칭 업무를 수행하며 빠른 상황 판단과 다국어 커뮤니케이션 역량을 키웠습니다."
+                data-en="Canadian 3PL logistics company · Monitored real-time freight operations and performed dispatching duties, building rapid situational judgment and multilingual communication skills."
+              >
+                캐나다 3PL 물류회사에서 실시간 화물 운행 현황 모니터링 및
+                디스패칭 업무를 수행하며 빠른 상황 판단과 다국어 커뮤니케이션
+                역량을 키웠습니다.
+              </p>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-period">2022.03 - 2024.06</div>
+            <div class="exp-body">
+              <span class="exp-role" data-ko="경력" data-en="Work">경력</span>
+              <h3>Shanto Dental Ceramics Ltd.</h3>
+              <p
+                data-ko="치기공소에서 3D 프린팅 공정 관리 및 CAD 기반 디지털 보철물 설계를 담당했습니다. CAD 소프트웨어를 완전히 파악하고자 설정 파일을 분석하고 필요한 것을 만들어 낸 경험이 개발 전환의 계기가 되었습니다."
+                data-en="3D printing process management and CAD-based digital prosthetics design. Directly resolving 3D printing tool issues by analyzing config files was the spark that led me to switch to software development."
+              >
+                치기공소에서 3D 프린팅 공정 관리 및 CAD 기반 디지털 보철물
+                설계를 담당했습니다. CAD 소프트웨어를 완전히 파악하고자 설정
+                파일을 분석하고 필요한 것을 만들어 낸 경험이 개발 전환의 계기가
+                되었습니다.
+              </p>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-period">2019.01 - 2019.02, 2019.07 - 2019.08</div>
+            <div class="exp-body">
+              <span class="exp-role" data-ko="인턴" data-en="Internship"
+                >인턴</span
+              >
+              <h3>Phillip Morris Korea</h3>
+              <p
+                data-ko="Operations & Quality 부문 인턴으로 생산 관리 및 품질 관리 업무를 수행했습니다."
+                data-en="Operations & Quality intern — handled production management and quality control processes."
+              >
+                Operations & Quality 부문 인턴으로 생산 관리 및 품질 관리 업무를
+                수행했습니다.
+              </p>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-period">2017.03 - 2017.07</div>
+            <div class="exp-body">
+              <span
+                class="exp-role"
+                data-ko="교환학생"
+                data-en="Exchange Student"
+                >교환학생</span
+              >
+              <h3
+                data-ko="독일 Hof University 교환학생"
+                data-en="Exchange Student · Hof University, Germany"
+              >
+                독일 Hof University 교환학생
+              </h3>
+              <p
+                data-ko="기계공학 전공 심화 학습 및 다양한 문화권 구성원과의 협업 역량을 습득했습니다."
+                data-en="Advanced mechanical engineering coursework and developed cross-cultural collaboration skills in an international environment."
+              >
+                기계공학 전공 심화 학습 및 다양한 문화권 구성원과의 협업 역량을
+                습득했습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="value-grid" style="margin-top: 24px">
+          <article class="panel">
+            <span class="material-symbols-outlined">architecture</span>
+            <h3 data-ko="구조적 설계" data-en="Structured Design">
+              구조적 설계
+            </h3>
+            <p
+              data-ko="복잡한 비즈니스 로직을 명확하고 유지보수 가능한 아키텍처로 구현합니다."
+              data-en="I turn complex business logic into clear, maintainable architecture."
+            >
+              복잡한 비즈니스 로직을 명확하고 유지보수 가능한 아키텍처로
+              구현합니다.
+            </p>
+          </article>
+          <article class="panel">
+            <span class="material-symbols-outlined">psychology</span>
+            <h3 data-ko="AI 통합" data-en="AI Integration">AI 통합</h3>
+            <p
+              data-ko="LLM을 웹 서비스에 연동해 사용자가 체감할 수 있는 기능으로 만듭니다."
+              data-en="I integrate LLMs into web services as features users can actually feel and use."
+            >
+              LLM을 웹 서비스에 연동해 사용자가 체감할 수 있는 기능으로
+              만듭니다.
+            </p>
+          </article>
+          <article class="panel">
+            <span class="material-symbols-outlined">speed</span>
+            <h3 data-ko="현장 감각" data-en="Field Intuition">현장 감각</h3>
+            <p
+              data-ko="제조, 물류, 의료 현장 경험으로 코드 너머의 맥락을 읽고 실질적인 문제를 해결합니다."
+              data-en="Experience across manufacturing, logistics, and healthcare helps me read context beyond code and solve real problems."
+            >
+              제조, 물류, 의료 현장 경험으로 코드 너머의 맥락을 읽고 실질적인
+              문제를 해결합니다.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="section">
+        <div class="section-head">
+          <p class="eyebrow" data-ko="기술" data-en="Skills">기술</p>
+          <h2 data-ko="기술 스택" data-en="Tech Stack">기술 스택</h2>
+        </div>
+        <div class="skill-grid">
+          <article class="panel skill-card">
+            <span class="material-symbols-outlined">desktop_windows</span>
+            <h3>Frontend</h3>
+            <ul>
+              <li>HTML / CSS / JavaScript</li>
+              <li>jQuery / AJAX</li>
+              <li>React / TypeScript</li>
+              <li>Vite / Axios</li>
+            </ul>
+          </article>
+          <article class="panel skill-card">
+            <span class="material-symbols-outlined">dns</span>
+            <h3>Backend</h3>
+            <ul>
+              <li>Java / Spring Boot</li>
+              <li>JSP / Tomcat</li>
+              <li>JPA / Hibernate</li>
+              <li>REST API / Session Auth</li>
+            </ul>
+          </article>
+          <article class="panel skill-card">
+            <span class="material-symbols-outlined">database</span>
+            <h3>Database</h3>
+            <ul>
+              <li>MySQL / MariaDB</li>
+              <li>PostgreSQL / PostGIS</li>
+              <li>Supabase</li>
+              <li
+                data-ko="ERD 설계 / 쿼리 최적화"
+                data-en="ERD Design / Query Optimization"
+              >
+                ERD 설계 / 쿼리 최적화
+              </li>
+            </ul>
+          </article>
+          <article class="panel skill-card">
+            <span class="material-symbols-outlined">smart_toy</span>
+            <h3>AI & Infra</h3>
+            <ul>
+              <li>Gemini / OpenAI API</li>
+              <li>Prompt Engineering</li>
+              <li>Docker / Cloud Run</li>
+              <li>Vercel / Railway</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="section-head">
+          <p class="eyebrow" data-ko="프로젝트" data-en="Projects">프로젝트</p>
+          <h2 data-ko="프로젝트" data-en="Projects">프로젝트</h2>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card project-featured">
+            <div class="project-copy">
+              <p class="badge" data-ko="팀 프로젝트" data-en="Team Project">
+                팀 프로젝트
+              </p>
+              <h3>ORDA</h3>
+              <p
+                data-ko="GPS 기반 등산 기록, 정상 인증, 경로 리플레이 기능을 제공하는 등산 플랫폼입니다. 팀장으로서 공간 데이터 처리와 고도 보정 방식을 설계하고, 공통 API 구조와 공용 지도 컴포넌트를 만들어 일관된 기준을 따르도록 했습니다. 또 세션 상세 페이지, 리플레이 등 핵심 기능 개발을 담당했습니다."
+                data-en="A mobile hiking web service connecting route discovery, tracking, verification, and reflection. I handled GPS data correction, DEM-based elevation processing, and OOM issue resolution."
+              >
+                GPS 기반 등산 기록, 정상 인증, 경로 리플레이 기능을 제공하는
+                등산 플랫폼입니다. 팀장으로서 공간 데이터 처리와 고도 보정
+                방식을 설계하고, 공통 API 구조와 공용 지도 컴포넌트를 만들어
+                일관된 기준을 따르도록 했습니다. 또 세션 상세 페이지, 리플레이
+                등 핵심 기능 개발을 담당했습니다.
+              </p>
+              <div class="tags">
+                <span>React</span><span>TypeScript</span><span>Spring Boot</span
+                ><span>PostGIS</span>
+              </div>
+              <a
+                class="button primary compact"
+                href="orda.html"
+                data-ko="상세 보기"
+                data-en="View Details"
+                >상세 보기</a
+              >
+            </div>
+            <img src="images/ORDA-main.png" alt="ORDA 프로젝트 미리보기" />
+          </article>
+
+          <article class="project-card">
+            <img
+              src="images/smiletrack-main.png"
+              alt="SmileTrack 대시보드 미리보기"
+            />
+            <div class="project-copy">
+              <p
+                class="badge"
+                data-ko="개인 프로젝트"
+                data-en="Personal Project"
+              >
+                개인 프로젝트
+              </p>
+              <h3>SmileTrack</h3>
+              <p
+                data-ko="치기공소 근무 경험에서 직접 발견한 문제를 기반으로 설계한 케이스 관리 시스템입니다. 바코드 스캔 기반 위치 추적, 공정 단위 상태 관리, 직원 권한별 배정 흐름을 포함합니다."
+                data-en="A case management system designed from problems I personally identified while working at a dental lab. Features barcode-based location tracking, process-level status management, and role-based assignment flows."
+              >
+                치기공소 근무 경험에서 직접 발견한 문제를 기반으로 설계한 케이스
+                관리 시스템입니다. 바코드 스캔 기반 위치 추적, 공정 단위 상태
+                관리, 직원 권한별 배정 흐름을 포함합니다.
+              </p>
+              <div class="tags">
+                <span>Spring Boot</span><span>JPA</span><span>React</span
+                ><span>MariaDB</span>
+              </div>
+              <a
+                class="button secondary compact"
+                href="smiletrack.html"
+                data-ko="상세 보기"
+                data-en="View Details"
+                >상세 보기</a
+              >
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="images/oopslog-main.png" alt="oopsLog AI 분석 미리보기" />
+            <div class="project-copy">
+              <p class="badge" data-ko="공모전" data-en="AI Service">공모전</p>
+              <h3>oopsLog</h3>
+              <p
+                data-ko="실패 경험을 기록하면 AI가 사실과 감정을 분리하고 인지 왜곡을 탐지해 사고 재구성을 돕는 서비스입니다. Gemini + OpenAI 폴백 구조로 안정성을 확보했습니다."
+                data-en="A service where AI separates facts from emotions in failure logs, detects cognitive distortions, and helps with thought reframing. Stability ensured via Gemini + OpenAI fallback architecture."
+              >
+                실패 경험을 기록하면 AI가 사실과 감정을 분리하고 인지 왜곡을
+                탐지해 사고 재구성을 돕는 서비스입니다. Gemini + OpenAI 폴백
+                구조로 안정성을 확보했습니다.
+              </p>
+              <div class="tags">
+                <span>React</span><span>Spring Boot</span><span>Gemini</span
+                ><span>OpenAI</span>
+              </div>
+              <a
+                class="button secondary compact"
+                href="oopslog.html"
+                data-ko="상세 보기"
+                data-en="View Details"
+                >상세 보기</a
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="education" class="section">
+        <div class="section-head">
+          <p class="eyebrow" data-ko="교육" data-en="Education">교육</p>
+          <h2 data-ko="교육 & 학력" data-en="Education & Background">
+            교육 & 학력
+          </h2>
+        </div>
+
+        <div class="edu-grid">
+          <div class="edu-card">
+            <span class="exp-role" data-ko="학사" data-en="Bachelor's Degree"
+              >학사</span
+            >
+            <h3
+              data-ko="성균관대학교 기계공학과"
+              data-en="Sungkyunkwan University · Mechanical Engineering"
+            >
+              성균관대학교 기계공학과
+            </h3>
+            <p>2015.03 - 2019.08 · GPA 3.38</p>
+          </div>
+          <div class="edu-card">
+            <span class="exp-role" data-ko="고등학교" data-en="High School"
+              >고등학교</span
+            >
+            <h3
+              data-ko="한국외국어대학교부속용인외국어고등학교"
+              data-en="Yongin Foreign Language High School (HUFS)"
+            >
+              한국외국어대학교부속용인외국어고등학교
+            </h3>
+            <p
+              data-ko="2012.03 - 2015.02 · 자연과학계열"
+              data-en="2012.03 - 2015.02 · Natural Sciences"
+            >
+              2012.03 - 2015.02 · 자연과학계열
+            </p>
+          </div>
+        </div>
+
+        <h3
+          style="margin-bottom: 18px"
+          data-ko="풀스택 개발자 양성과정 커리큘럼"
+          data-en="Full-Stack Bootcamp Curriculum"
+        >
+          풀스택 개발자 양성과정 커리큘럼
+        </h3>
+        <div class="timeline">
+          <div class="timeline-dot"></div>
+          <article>
+            <time data-ko="2025.11" data-en="Nov 2025">2025.11</time>
+            <h3
+              data-ko="Java 기초 및 객체지향"
+              data-en="Java Fundamentals & OOP"
+            >
+              Java 기초 및 객체지향
+            </h3>
+            <p
+              data-ko="변수, 조건문, 반복문, 배열 등 기초 문법부터 클래스, 상속, 인터페이스, 예외 처리 등 객체지향의 핵심 구조를 학습했습니다. JUnit을 활용한 TDD(테스트 주도 개발) 방식으로 다항식 계산기를 구현하며 테스트 코드 작성의 기초를 체득했습니다."
+              data-en="Covered variables, conditionals, loops, and arrays through to classes, inheritance, interfaces, and exception handling. Internalized TDD fundamentals by building a polynomial calculator with JUnit."
+            >
+              변수, 조건문, 반복문, 배열 등 기초 문법부터 클래스, 상속,
+              인터페이스, 예외 처리 등 객체지향의 핵심 구조를 학습했습니다.
+              JUnit을 활용한 TDD(테스트 주도 개발) 방식으로 다항식 계산기를
+              구현하며 테스트 코드 작성의 기초를 체득했습니다.
+            </p>
+            <div class="tags">
+              <span>Java</span><span>OOP</span><span>TDD</span
+              ><span>JUnit</span>
+            </div>
+          </article>
+
+          <div class="timeline-dot"></div>
+          <article>
+            <time data-ko="2025.12" data-en="Dec 2025">2025.12</time>
+            <h3
+              data-ko="CLI 애플리케이션 및 MVC 패턴 설계"
+              data-en="CLI Apps & MVC Pattern Design"
+            >
+              CLI 애플리케이션 및 MVC 패턴 설계
+            </h3>
+            <p
+              data-ko="Motivation CLI 앱과 ArticleManager 게시판 앱을 설계하며 MVC 패턴, 데이터 흐름, 로그인 세션 처리, CRUD 비즈니스 로직을 순수 자바 코드로 직접 구현하여 소프트웨어 아키텍처의 기본기를 다졌습니다."
+              data-en="Built CLI applications including Motivation App and ArticleManager, directly designing MVC structures, session tracking, and CRUD flows in pure Java."
+            >
+              Motivation CLI 앱과 ArticleManager 게시판 앱을 설계하며 MVC 패턴,
+              데이터 흐름, 로그인 세션 처리, CRUD 비즈니스 로직을 순수 자바
+              코드로 직접 구현하여 소프트웨어 아키텍처의 기본기를 다졌습니다.
+            </p>
+            <div class="tags">
+              <span>Java</span><span>MVC Pattern</span><span>CLI</span
+              ><span>Session Control</span>
+            </div>
+          </article>
+
+          <div class="timeline-dot"></div>
+          <article>
+            <time data-ko="2025.12 - 2026.01" data-en="Dec 2025 - Jan 2026"
+              >2025.12 - 2026.01</time
+            >
+            <h3
+              data-ko="관계형 데이터베이스 설계 및 웹 프론트엔드 기초"
+              data-en="RDBMS Design & Web Frontend Basics"
+            >
+              관계형 데이터베이스 설계 및 웹 프론트엔드 기초
+            </h3>
+            <p
+              data-ko="정규화, ERD 작성, SQL 쿼리문과 복잡한 Join 연산을 학습하여 데이터베이스를 효율적으로 설계하는 방법을 익혔습니다. 동시에 HTML, CSS, JavaScript를 학습하며 웹 표준과 DOM 조작을 통한 동적 화면 구현의 원리를 이해했습니다."
+              data-en="Studied database normalization, ERD design, and advanced SQL Joins. Mastered web standards and dynamic DOM manipulation using HTML, CSS, and JavaScript."
+            >
+              데이터베이스 정규화, ERD 작성, SQL 쿼리문과 복잡한 Join 연산을
+              학습하여 데이터베이스를 효율적으로 설계하는 방법을 익혔습니다.
+              동시에 HTML, CSS, JavaScript를 학습하며 웹 표준과 DOM 조작을 통한
+              동적 화면 구현의 원리를 이해했습니다.
+            </p>
+            <div class="tags">
+              <span>MySQL</span><span>RDBMS</span><span>ERD</span
+              ><span>HTML5/CSS3</span><span>JavaScript</span>
+            </div>
+          </article>
+
+          <div class="timeline-dot"></div>
+          <article>
+            <time data-ko="2026.01 - 2026.02" data-en="Jan - Feb 2026"
+              >2026.01 - 2026.02</time
+            >
+            <h3
+              data-ko="JSP/Servlet 웹 프레임워크 및 Spring Boot 기본기"
+              data-en="JSP/Servlet Framework & Spring Boot Core"
+            >
+              JSP/Servlet 웹 프레임워크 및 Spring Boot 기본기
+            </h3>
+            <p
+              data-ko="JSP/Servlet 기반 아키텍처와 웹 서버(WAS)의 요청/응답 흐름을 이해한 뒤, Spring Boot 환경의 MVC 아키텍처와 Spring Data JPA 엔티티 매핑, RESTful API 설계 및 네트워크 기초 이론을 심도 있게 체득했습니다."
+              data-en="Explored web requests and response cycles with JSP/Servlet architectures, then transitioned into Spring Boot MVC, Spring Data JPA mappings, RESTful API designs, and core network networking layers."
+            >
+              JSP/Servlet 기반 아키텍처와 웹 서버(WAS)의 요청/응답 흐름을 이해한
+              뒤, Spring Boot 환경의 MVC 아키텍처와 Spring Data JPA 엔티티 매핑,
+              RESTful API 설계 및 네트워크 기초 이론을 심도 있게 체득했습니다.
+            </p>
+            <div class="tags">
+              <span>Spring Boot</span><span>JPA/Hibernate</span
+              ><span>JSP/Servlet</span><span>REST API</span>
+            </div>
+          </article>
+
+          <div class="timeline-dot"></div>
+          <article>
+            <time data-ko="2026.02 - 2026.03" data-en="Feb - Mar 2026"
+              >2026.02 — 2026.03</time
+            >
+            <h3
+              data-ko="개인 프로젝트 - SmileTrack"
+              data-en="Solo Project - SmileTrack"
+            >
+              개인 프로젝트 - SmileTrack
+              <a href="smiletrack.html" class="item-link">SmileTrack</a>
+            </h3>
+            <p
+              data-ko="치기공소 워크플로우 관리 서비스를 개발하며 요구사항 분석, DB 설계, 백엔드/프론트엔드 구현까지 서비스 개발 전 과정을 경험했습니다."
+              data-en="An industry-tailored dental lab case and workflow management software designed from scratch. Owned requirements analysis, DB design, Spring Boot APIs, React dashboard rendering, and public cloud deployment."
+            >
+              치기공소 워크플로우 관리 서비스를 개발하며 요구사항 분석, DB 설계,
+              백엔드/프론트엔드 구현까지 서비스 개발 전 과정을 경험했습니다.
+            </p>
+            <div class="tags">
+              <span>Spring Boot</span><span>MariaDB</span><span>React</span
+              ><span>Figma</span>
+            </div>
+          </article>
+
+          <div class="timeline-dot"></div>
+          <article>
+            <time data-ko="2026.03 - 2026.04" data-en="Mar - Apr 2026"
+              >2026.03 - 2026.04</time
+            >
+            <h3 data-ko="React & 결제 연동" data-en="React & Payment">
+              React & 결제 연동
+            </h3>
+            <p
+              data-ko="팀 프로젝트 진행과 병렬로 정규 수업을 통해 React 프레임워크 스택을 확장했습니다. 컴포넌트 기반 아키텍처, 훅, 상태 관리, SPA 라우팅 및 JWT 기반의 보안 인증 메커니즘을 심화 학습했으며, 외부 API 연동 실습의 일환으로 토스페이먼츠 결제 시스템의 연동 흐름과 명세를 분석하고 구현했습니다."
+              data-en="Expanded technical stack into React framework via lecture tracks parallel to team project milestones. Studied component architectures, Hooks, state patterns, and JWT security. Analyzed and simulated Toss Payments integration flows using third-party APIs."
+            >
+              팀 프로젝트 진행과 병렬로 정규 수업을 통해 React 프레임워크 스택을
+              확장했습니다. 컴포넌트 기반 아키텍처, 훅, 상태 관리, SPA 라우팅 및
+              JWT 기반의 보안 인증 메커니즘을 심화 학습했으며, 외부 API 연동
+              실습의 일환으로 토스페이먼츠 결제 시스템의 연동 흐름과 명세를
+              분석하고 구현했습니다.
+            </p>
+            <div class="tags">
+              <span>React</span><span>JWT</span><span>Toss Payments API</span>
+            </div>
+          </article>
+
+          <div class="timeline-dot"></div>
+          <article>
+            <time data-ko="2026.03 - 2026.04" data-en="Mar - Apr 2026"
+              >2026.03 - 2026.04</time
+            >
+            <h3
+              data-ko="팀 프로젝트 - ORDA (공간 데이터 융합 풀스택)"
+              data-en="Team Project - ORDA (Spatial Data Full-Stack)"
+            >
+              팀 프로젝트 - ORDA<a href="orda.html" class="item-link">ORDA</a>
+            </h3>
+            <p
+              data-ko="GPS 기반 등산 플랫폼 ORDA를 개발하며 팀장으로서 기술 의사결정과 협업을 이끌고, 공간 데이터 처리 및 지도 기반 기능 개발을 경험했습니다."
+              data-en="A comprehensive hiking and spatial analytics platform developed in a 3-person engineering team. Led OpenStreetMap (OSM) ingestion pipeline optimizations, GPS path error corrections, and specialized PostGIS geometric spatial queries. Managed containerized infrastructures via Docker and Cloud Run workflows."
+            >
+              GPS 기반 등산 플랫폼 ORDA를 개발하며 팀장으로서 기술 의사결정과
+              협업을 이끌고, 공간 데이터 처리 및 지도 기반 기능 개발을
+              경험했습니다.
+            </p>
+            <div class="tags">
+              <span>Spring Boot</span><span>PostgreSQL</span><span>PostGIS</span
+              ><span>OpenStreetMap</span><span>Docker</span
+              ><span>Cloud Run</span>
+            </div>
+          </article>
+        </div>
+
+        <div style="margin-top: 32px">
+          <h3
+            style="margin-bottom: 14px"
+            data-ko="자격 & 어학"
+            data-en="Certifications & Language"
+          >
+            자격 & 어학
+          </h3>
+          <div class="edu-grid">
+            <div class="edu-card">
+              <span class="exp-role">TOEIC</span>
+              <h3>990점</h3>
+              <p>2026.02.01 취득</p>
+            </div>
+            <div class="edu-card">
+              <span class="exp-role" data-ko="면허" data-en="License"
+                >면허</span
+              >
+              <h3
+                data-ko="운전면허 2종 보통"
+                data-en="Driver's License (Type 2)"
+              >
+                운전면허 2종 보통
+              </h3>
+              <p>2015.01.12 취득</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section">
+        <p class="eyebrow" data-ko="연락처" data-en="Contact">연락처</p>
+        <h2
+          data-ko="현장 감각을 가진 풀스택 개발자입니다."
+          data-en="A full-stack developer with real-world field experience."
+        >
+          현장 감각을 가진 풀스택 개발자입니다.
+        </h2>
+        <p
+          data-ko="새로운 도전을 환영하며, 함께 성장할 수 있는 기회를 기다리고 있습니다."
+          data-en="I welcome new challenges and opportunities to grow together."
+        >
+          새로운 도전을 환영하며, 함께 성장할 수 있는 기회를 기다리고 있습니다.
+        </p>
+        <div class="contact-grid">
+          <a class="panel contact-card" href="mailto:may.code.28@gmail.com">
+            <span class="material-symbols-outlined">mail</span>
+            <strong data-ko="이메일" data-en="Email">이메일</strong>
+            <span>may.code.28@gmail.com</span>
+          </a>
+          <a class="panel contact-card" href="tel:010-2811-2155">
+            <span class="material-symbols-outlined">phone</span>
+            <strong data-ko="전화" data-en="Phone">전화</strong>
+            <span>010-2811-2155</span>
+          </a>
+          <a
+            class="panel contact-card"
+            href="https://github.com/maycode28"
+            target="_blank"
+            rel="noreferrer"
+          >
             <span class="material-symbols-outlined">code</span>
-            GitHub
+            <strong>GitHub</strong>
+            <span>github.com/maycode28</span>
+          </a>
+          <a
+            class="panel contact-card"
+            href="https://velog.io/@maycode28/posts"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span class="material-symbols-outlined">article</span>
+            <strong>Velog</strong>
+            <span>velog.io/@maycode28</span>
           </a>
         </div>
-      </div>
-      <div class="hero-visual" aria-label="개발자 작업 환경 이미지">
-        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-5VaW7QlvFm0cv26UKsPBLKrVULE8Zl7vjl3kQU8AtelwW60gsEbPze2sNvfpkQJJokPfOOV0peWrQj71GXpl5ou9LjOe33H2u-NeXS98I52EBuv0fxzhj-bOt5M6peh0e-0NEFZJ0OZjKiJpXpSuQIkHQNm9pctiK-LAsO7-VVrULH87b-LXmQUeKArAA4vWose6bHIzHF66EYGOR3QFbF_fEcgHCYq7r-DGFHZeSSYMWTBCCtHUnttC19Ez37vyhyM8HXjowA" alt="코드와 데이터 화면이 놓인 개발자 작업 공간">
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <section id="about" class="section">
-      <div class="section-head">
-        <p class="eyebrow">About</p>
-        <h2>문제 해결 중심의 풀스택 개발자</h2>
-      </div>
-      <div class="about-grid">
-        <article class="panel about-main">
-          <h3>철학</h3>
-          <p>저는 단순한 코딩을 넘어 비즈니스와 사용자의 문제를 해결하는 것에 집중합니다. 프론트엔드의 세밀한 사용자 경험부터 백엔드의 견고한 아키텍처, 인공지능 모델 연동까지 시스템 전체를 조망하며 최적의 솔루션을 설계합니다.</p>
-          <p>최신 기술을 맹목적으로 쫓기보다는 요구사항에 맞는 도구를 선택하고, 안정적이며 확장 가능한 시스템을 만드는 것을 선호합니다.</p>
-        </article>
-        <aside class="panel profile-panel">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_SpKGj5NB70BnGjH-qjoTvcKs6Muysyuha5IGmtVlRiz1dJEoJ-oDMJoDqPClqqdZf8fnbFFtX44yDZnG72Nxq3hbm4eXJkmMDW7JHxH_2wwn4RR_ro_5THDyoF51AL5h1ah2YJwlakT-zVDqHqD6ySft2tJ0QKLE1YraJAsB5rjI252HXDgkH1idcxiH1d4b2JljM3rI97pYAe7E6g5ji9msAqxkhvDigqNvkBoJLL2F9H23KILH-BrHXuaNpUCCHch3siHezg" alt="김지현 프로필 이미지">
-          <h3>김지현</h3>
-          <p>Full-Stack Engineer</p>
-          <div class="mini-tags">
-            <span>Seoul, KR</span>
-            <span>Java / Spring</span>
-          </div>
-        </aside>
-      </div>
-      <div class="value-grid">
-        <article class="panel">
-          <span class="material-symbols-outlined">architecture</span>
-          <h3>구조적 설계</h3>
-          <p>복잡한 비즈니스 로직을 명확하고 유지보수 가능한 아키텍처로 구현합니다.</p>
-        </article>
-        <article class="panel">
-          <span class="material-symbols-outlined">psychology</span>
-          <h3>AI 통합</h3>
-          <p>LLM을 웹 서비스에 연동해 사용자가 체감할 수 있는 기능으로 만듭니다.</p>
-        </article>
-        <article class="panel">
-          <span class="material-symbols-outlined">speed</span>
-          <h3>성능 최적화</h3>
-          <p>데이터베이스 쿼리부터 렌더링까지 전 구간의 병목을 추적하고 개선합니다.</p>
-        </article>
-      </div>
-    </section>
+    <site-footer></site-footer>
 
-    <section id="skills" class="section">
-      <div class="section-head">
-        <p class="eyebrow">Skills</p>
-        <h2>기술 스택</h2>
-      </div>
-      <div class="skill-grid">
-        <article class="panel skill-card">
-          <span class="material-symbols-outlined">desktop_windows</span>
-          <h3>Frontend</h3>
-          <ul>
-            <li>HTML / CSS / JavaScript</li>
-            <li>React / TypeScript</li>
-            <li>Vite / Fetch / Axios</li>
-            <li>반응형 UI</li>
-          </ul>
-        </article>
-        <article class="panel skill-card">
-          <span class="material-symbols-outlined">dns</span>
-          <h3>Backend</h3>
-          <ul>
-            <li>Java / Spring Boot</li>
-            <li>JSP / Tomcat</li>
-            <li>JPA / Hibernate</li>
-            <li>REST API / Session Auth</li>
-          </ul>
-        </article>
-        <article class="panel skill-card">
-          <span class="material-symbols-outlined">database</span>
-          <h3>Database</h3>
-          <ul>
-            <li>MySQL / MariaDB</li>
-            <li>PostgreSQL / Supabase</li>
-            <li>SQL / 테이블 설계</li>
-            <li>쿼리 최적화</li>
-          </ul>
-        </article>
-        <article class="panel skill-card">
-          <span class="material-symbols-outlined">smart_toy</span>
-          <h3>AI & Infra</h3>
-          <ul>
-            <li>Gemini / OpenAI</li>
-            <li>Prompt Engineering</li>
-            <li>Docker / Railway</li>
-            <li>Vercel / Cloud Run</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section id="projects" class="section">
-      <div class="section-head">
-        <p class="eyebrow">Projects</p>
-        <h2>프로젝트</h2>
-      </div>
-      <div class="projects-grid">
-        <article class="project-card project-featured">
-          <div class="project-copy">
-            <p class="badge">개인 프로젝트</p>
-            <h3>SmileTrack</h3>
-            <p>케이스 관리와 프로세스를 연결하는 치기공소 내부 케이스 관리 및 작업 흐름 추적 웹 서비스.</p>
-            <div class="tags">
-              <span>Spring Boot</span><span>JPA</span><span>React</span><span>MariaDB</span>
-            </div>
-            <a class="button primary compact" href="smiletrack.html">상세 보기</a>
-          </div>
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_WDjNzy4AI0jyvPN53AoqUzRun5_j8S421IeqbcH9B_UsZ2L-B2dfkTsuVizFCk2Opg_CWQARh3U2cPU8ygNZyWAj8e68kihSwr4c3QP3tWNHcRiek4ncuXJ9lOP4f23K_8PQ5KMv1g2NzaR7OEnhj068_2QBSdk2_DPUS6yW0lyCaVX6CRrIImeil-inGl5CiPBfBypFkYrbuNWKZefaXRedKBRbGSA_IcOfr3PPKcFWR1MRu_l0zEfxjn7GZGXEmzLsYPkVUA" alt="SmileTrack 대시보드 미리보기">
-        </article>
-        <article class="project-card">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnfsQbdCEGLmTkZ5Hdd_DY0LsxLP9ch7Gr7mz-Eea0Hy3c3hpx0nC9XxYcCKZx5NLTuiofCZrO8Wj6ZBKMF0nv6iRzoVdwMt_Y1OWH8d-hphGuz2BvHvZI0wuxGzNPDTNbBD0q6wzV9Fu7X7olpCu5xGMKKOupWtl0-tod6NkhAb0-9hQwHlk8K6juyClE85bfOPGj_XG3cNj3v4gAXDub87y9wbeBx--SK3HVKo94Oamt4w6sTHytLz8lDCeW6d3zbTYarrTfGA" alt="ORDA 프로젝트 미리보기">
-          <div class="project-copy">
-            <p class="badge">팀 프로젝트</p>
-            <h3>ORDA</h3>
-            <p>탐색, 기록, 인증, 회고를 연결하는 등산 모바일 웹 서비스.</p>
-            <div class="tags">
-              <span>React</span><span>TypeScript</span><span>Spring Boot</span><span>PostGIS</span>
-            </div>
-            <a class="button secondary compact" href="orda.html">상세 보기</a>
-          </div>
-        </article>
-        <article class="project-card">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-PkbFNYvBhYKuvboYRmDJp0X678uyY8fn1YpIUs06xKKg6aq-AcxyMcfi_MMaLCEkSHZ998x4VeJ9mNvKFYZbkuSYYG-YNWxBAgxXe7wFdSvYtYJwL5GJQzXk7cjq3rE-MCvLOXILXZ_aEgU4C7tkGDofIUiSzOGYRK0-CXzBnSh_QOoyBemaSqwy1zEMtnwioOlBcGHTjFWZMEnN0p9oW7boMwco0HVBTEvpspPwfV4EMCgtZj7DzcdHGt6occk5fG8u7ekp3w" alt="oopsLog AI 분석 미리보기">
-          <div class="project-copy">
-            <p class="badge">AI 프로젝트</p>
-            <h3>oopsLog</h3>
-            <p>AI 기반 인지 왜곡 분석 및 사고 재구성 서비스.</p>
-            <div class="tags">
-              <span>React</span><span>Spring Boot</span><span>Gemini</span><span>OpenAI</span>
-            </div>
-            <a class="button secondary compact" href="oopslog.html">상세 보기</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="education" class="section">
-      <div class="section-head">
-        <p class="eyebrow">Education</p>
-        <h2>교육 과정</h2>
-      </div>
-      <div class="timeline">
-        <article>
-          <span>Step 1</span>
-          <h3>Java Foundation</h3>
-          <p>객체지향 프로그래밍, 자료구조, 예외 처리를 학습했습니다.</p>
-        </article>
-        <article>
-          <span>Step 2</span>
-          <h3>Database & Web Basics</h3>
-          <p>MySQL, SQL, HTML, CSS, JavaScript 기반의 웹 개발 흐름을 익혔습니다.</p>
-        </article>
-        <article>
-          <span>Step 3</span>
-          <h3>Spring Framework</h3>
-          <p>Spring Boot, MVC, JPA/Hibernate를 활용해 서버 애플리케이션을 구현했습니다.</p>
-        </article>
-        <article>
-          <span>Step 4</span>
-          <h3>Final Team Project & React</h3>
-          <p>팀 프로젝트와 React SPA 개발을 통해 기획부터 배포까지 경험했습니다.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact-section">
-      <p class="eyebrow">Contact</p>
-      <h2>서비스 전체 흐름을 이해하고 구현하는 개발자입니다.</h2>
-      <p>새로운 도전을 환영하며, 함께 성장할 수 있는 기회를 기다리고 있습니다.</p>
-      <div class="contact-grid">
-        <a class="panel contact-card" href="mailto:hello@example.com">
-          <span class="material-symbols-outlined">mail</span>
-          <strong>Email</strong>
-          <span>hello@example.com</span>
-        </a>
-        <a class="panel contact-card" href="https://github.com/maykim" target="_blank" rel="noreferrer">
-          <span class="material-symbols-outlined">code</span>
-          <strong>GitHub</strong>
-          <span>github.com/maykim</span>
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <strong>May Kim</strong>
-    <span>© 2026 Kim Ji-hyun. All rights reserved.</span>
-    <div>
-      <a href="https://github.com/maykim" target="_blank" rel="noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
-      <a href="mailto:hello@example.com">Email</a>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
+    <script src="components.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

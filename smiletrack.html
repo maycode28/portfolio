@@ -1,68 +1,529 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SmileTrack - May Kim</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="index.html">May Kim</a>
-    <button class="menu-button" type="button" aria-label="메뉴 열기" aria-expanded="false">
-      <span class="material-symbols-outlined">menu</span>
-    </button>
-    <nav class="site-nav" aria-label="주요 메뉴">
-      <a href="index.html#home">홈</a>
-      <a href="index.html#about">소개</a>
-      <a href="index.html#skills">기술</a>
-      <a class="active" href="index.html#projects">프로젝트</a>
-      <a href="index.html#education">교육</a>
-      <a href="index.html#contact">연락처</a>
-    </nav>
-  </header>
-  <main class="detail-main">
-    <a class="back-link" href="index.html#projects"><span class="material-symbols-outlined">arrow_back</span> 프로젝트로 돌아가기</a>
-    <section class="detail-hero">
-      <div>
-        <p class="eyebrow">Project Report</p>
-        <h1>SmileTrack</h1>
-        <p class="hero-line">케이스 관리와 프로세스를 연결하는 시스템</p>
-        <p>치기공소 내부 케이스 관리 및 작업 흐름 추적 웹 서비스입니다. 케이스 상태 추적, 표준 프로세스 관리, 직원 권한 기반 배정, 로그 및 이력 관리를 중심으로 구성했습니다.</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmileTrack - Project Detail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <site-header></site-header>
+
+    <main class="detail-main">
+      <div class="back-nav">
+        <a href="index.html#projects" class="back-link">
+          <span class="material-symbols-outlined" style="font-size: 16px"
+            >arrow_back</span
+          >
+          <span data-ko="프로젝트 목록으로 돌아가기" data-en="Back to Projects"
+            >프로젝트 목록으로 돌아가기</span
+          >
+        </a>
       </div>
-      <aside class="panel">
-        <h3>Technology Stack</h3>
-        <div class="tags">
-          <span>Spring Boot</span><span>JPA</span><span>React</span><span>MariaDB</span>
+
+      <section class="project-header">
+        <span
+          class="project-meta"
+          data-ko="개인 프로젝트&nbsp;&nbsp;&nbsp;2026.02 - 2026.03"
+          data-en="Individual Project&nbsp;&nbsp;&nbsp;Feb 2026 - Mar 2026"
+          >개인 프로젝트&nbsp;&nbsp;&nbsp;2026.02 - 2026.03</span
+        >
+        <h1 class="project-title">SmileTrack</h1>
+        <p
+          class="project-subtitle"
+          data-ko="치기공소 공정 관리의 한계를 해결하는 실시간 보철물 위치 트래킹 시스템"
+          data-en="Dental Laboratory Workflow Management & Case Tracking System"
+        >
+          치기공소 공정 관리의 한계를 해결하는 실시간 보철물 위치 트래킹 시스템
+        </p>
+
+        <div
+          class="panel"
+          style="
+            border-left: 4px solid var(--text);
+            border-radius: 0 6px 6px 0;
+            background: var(--surface-soft);
+            padding: 20px;
+          "
+        >
+          <p
+            style="
+              margin: 0;
+              font-size: 15px;
+              line-height: 1.6;
+              color: var(--text);
+            "
+            data-ko="기존 전산 프로그램이 해결하지 못하던 보철물의 실시간 위치 추적과 작업자별 부하 예측 문제를 현업 인터뷰를 통해 날카롭게 정의하고, 이를 데이터 구조로 변환하여 해결해 나간 데이터 중심의 관리 시스템입니다."
+            data-en="A workflow tracking system created by identifying the limitations of existing software and converting real-world production bottlenecks into structured data state changes."
+          >
+            기존 전산 프로그램이 해결하지 못하던 보철물의 실시간 위치 추적과
+            작업자별 부하 예측 문제를 현업 인터뷰를 통해 날카롭게 정의하고, 이를
+            데이터 구조로 변환하여 해결해 나간 데이터 중심의 관리 시스템입니다.
+          </p>
+
+          <div class="demo-banner">
+            <div class="link-group">
+              <a
+                href="https://github.com/maycode28/SmileTrack"
+                target="_blank"
+                rel="noreferrer"
+                class="demo-link-btn"
+              >
+                <span class="material-symbols-outlined" style="font-size: 18px"
+                  >code</span
+                >
+                <span data-ko="GitHub 저장소" data-en="GitHub Repository"
+                  >GitHub 저장소</span
+                >
+              </a>
+            </div>
+          </div>
         </div>
-      </aside>
-    </section>
-    <div class="detail-image">
-      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaC-7k8WZhx-m8T9YteTKGnlEtl1zKzAmeGa6IdKboi-Q-PFiILccY85PTo9NHzOHcQDEczElNmEyghJyu0V8IGKXoAA-hDN1-mQdb6YfKSD1ISrwZ7r3JuVnxsSKlESuH7HT5DzIPzEUe5N0Ss0i7B_J9nlq7j19wz6Mhe95dfZkkRZxCQ-b80Sk8fkur0QW6ixwK_-FS9j4k4hUIKZRys6BX5VmORO96zQFlofKy61tNKk9On4buLbuqOcP-QZ7_Y1lSzQx1yA" alt="SmileTrack 대시보드 화면">
-    </div>
-    <section class="detail-grid">
-      <div class="panel">
-        <h2>Core Features</h2>
-        <div class="feature-list">
-          <article><h3>케이스 상태 추적</h3><p>각 케이스의 진행 상황을 모니터링하고 추적합니다.</p></article>
-          <article><h3>프로세스 관리</h3><p>표준화된 작업 흐름을 정의하고 단계별 관리를 지원합니다.</p></article>
-          <article><h3>직원 권한 기반 배정</h3><p>역할과 권한에 따라 작업 배정 흐름을 관리합니다.</p></article>
-          <article><h3>로그 및 이력 관리</h3><p>활동과 변경 사항을 기록해 추적 가능성을 높입니다.</p></article>
+      </section>
+
+      <section class="detail-grid">
+        <div class="panel">
+          <h2
+            style="
+              font-size: 12px;
+              color: var(--subtle);
+              text-transform: uppercase;
+              letter-spacing: 0.1em;
+              border-bottom: 1px solid var(--line);
+              padding-bottom: 8px;
+              margin-bottom: 16px;
+            "
+            data-ko="문제를 정의하고 해결한 과정"
+            data-en="How I Defined & Solved the Problem"
+          >
+            문제를 정의하고 해결한 과정
+          </h2>
+          <ul class="role-list">
+            <li>
+              <strong
+                data-ko="현업 시절의 페인 포인트를 개발 지식으로 재해석하여 문제 정의"
+                data-en="Resolving Past Workplace Pain Points with New Engineering Skills"
+                >현업 시절의 페인 포인트를 개발 지식으로 재해석하여 문제
+                정의</strong
+              >
+              <span
+                data-ko="캐나다 치기공소 재직 당시 매니저와 고민했으나 당시에는 기술적 한계로 풀지 못했던 실무 이슈를, 개발 공부를 시작한 후 주도적으로 다시 추적하여 구체화했습니다. 기존 전산 프로그램이 있음에도 늘 발생하던 '실시간 위치 파악 불가능'과 '작업자 부하 예측 불가'라는 현업의 문제를 도출해 냈습니다."
+                data-en="Driven by unresolved bottlenecks from my past dental lab role in Canada, I re-engaged with the manager after learning to code. I analyzed why their invoicing system failed to track work-in-progress, clearly defining the exact visibility and capacity forecasting gaps we once faced."
+                >캐나다 치기공소 재직 당시 매니저와 고민했으나 당시에는 기술적
+                한계로 풀지 못했던 실무 이슈를, 개발 공부를 시작한 후 주도적으로
+                다시 추적하여 구체화했습니다. 기존 전산 프로그램이 있음에도 늘
+                발생하던 '실시간 위치 파악 불가능'과 '작업자 부하 예측 불가'라는
+                현업의 문제를 도출해 냈습니다.</span
+              >
+            </li>
+            <li>
+              <strong
+                data-ko="흐름을 통제하는 명확한 상태와 이력 설계"
+                data-en="Designing Explicit Status and History Schema"
+                >흐름을 통제하는 명확한 상태와 이력 설계</strong
+              >
+              <span
+                data-ko="기공물이 단순히 접수되고 끝나는 것이 아니라, 여러 단계의 공정을 거치고 언제든 이전 단계로 돌아갈 수도 있는 동적인 흐름을 안전하게 기록하는 데이터 구조 설계"
+                data-en="Modeled a relational database flow that captures not just the current phase, but step-by-step history snapshots to cleanly handle complex re-work and department handover logs."
+                >기공물이 단순히 접수되고 끝나는 것이 아니라, 여러 단계의 공정을
+                거치고 언제든 이전 단계로 돌아갈 수도 있는 동적인 흐름을
+                안전하게 기록하는 데이터 구조 설계</span
+              >
+            </li>
+            <li>
+              <strong
+                data-ko="화면 설계(Figma)와 DB 모델링의 유기적 연결"
+                data-en="Connecting Figma Prototypes directly to ERD Constraints"
+                >화면 설계(Figma)와 DB 모델링의 유기적 연결</strong
+              >
+              <span
+                data-ko="이메일 피드백에서 요구된 필수 정보(Patient name, Pan #, Shade 등)를 누락 없이 채우기 위해, Figma 화면을 먼저 설계해 보며 가변적인 기공물 데이터 필드를 ERD 구조에 꼼꼼히 반영"
+                data-en="Mapped essential production values outlined in user feedback into responsive Figma mockups first, ensuring data integrity before committing to database normalization."
+                >이메일 피드백에서 요구된 필수 정보(Patient name, Pan #, Shade
+                등)를 누락 없이 채우기 위해, Figma 화면을 먼저 설계해 보며
+                가변적인 기공물 데이터 필드를 ERD 구조에 꼼꼼히 반영</span
+              >
+            </li>
+          </ul>
         </div>
-      </div>
-      <aside class="panel">
-        <h2>Highlights</h2>
-        <p><strong>MyBatis → JPA 전환</strong></p>
-        <p>데이터 접근 계층의 생산성과 유지보수성을 높이기 위해 ORM을 도입하고 쿼리 구조를 개선했습니다.</p>
-        <p><strong>데이터 기반 프로세스 설계</strong></p>
-        <p>작업 흐름의 유연성을 확보하기 위해 프로세스 단위를 데이터화했습니다.</p>
-      </aside>
-    </section>
-  </main>
-  <script src="script.js"></script>
-</body>
+
+        <div class="panel">
+          <h2
+            style="
+              font-size: 12px;
+              color: var(--subtle);
+              text-transform: uppercase;
+              letter-spacing: 0.1em;
+              border-bottom: 1px solid var(--line);
+              padding-bottom: 8px;
+              margin-bottom: 16px;
+            "
+            data-ko="Tech Stack"
+            data-en="Tech Stack"
+          >
+            Tech Stack
+          </h2>
+
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+              margin-bottom: 16px;
+            "
+          >
+            <div>
+              <div class="tag-container">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">Spring Boot</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">MariaDB</span>
+              </div>
+            </div>
+          </div>
+
+          <h3
+            style="
+              font-size: 11px;
+              color: var(--subtle);
+              text-transform: uppercase;
+              margin-bottom: 6px;
+              font-weight: 700;
+            "
+            data-ko="Focus"
+            data-en="Focus"
+          >
+            Focus
+          </h3>
+          <p
+            style="
+              margin: 0;
+              font-size: 14px;
+              color: var(--text);
+              font-weight: 500;
+            "
+            data-ko="요구사항 분석 기반 데이터 모델링, 도메인 비즈니스 로직 구체화"
+            data-en="Requirement-Driven Data Modeling, Domain Logic Specification"
+          >
+            요구사항 분석 기반 데이터 모델링, 도메인 비즈니스 로직 구체화
+          </p>
+        </div>
+      </section>
+
+      <section class="deep-dive-section">
+        <h2
+          class="section-headline"
+          data-ko="프로젝트의 시작"
+          data-en="Project Catalyst"
+        >
+          프로젝트의 시작
+        </h2>
+        <div
+          class="panel"
+          style="
+            background: var(--surface-soft);
+            padding: 24px;
+            border: 1px solid var(--line);
+          "
+        >
+          <p
+            style="
+              font-size: 14px;
+              line-height: 1.6;
+              margin-top: 0;
+              color: var(--muted);
+            "
+            data-ko="개발을 무작정 시작하기 전, 이전 직장(캐나다 치기공소 Shanto Dental)의 랩 매니저 Julia와 이메일을 주고받으며 기존 소프트웨어가 해결해주지 못해 현업에서 겪고 있는 진짜 문제점들이 무엇인지 수집하고 분석했습니다."
+            data-en="Before writing code, I communicated with Julia, the Lab Manager at Shanto Dental in Canada, to analyze exactly where existing management tools failed to support real-time team synchronization."
+          >
+            개발을 무작정 시작하기 전, 이전 직장(캐나다 치기공소 Shanto
+            Dental)의 랩 매니저 Julia와 이메일을 주고받으며 기존 소프트웨어가
+            해결해주지 못해 현업에서 겪고 있는 진짜 문제점들이 무엇인지 수집하고
+            분석했습니다.
+          </p>
+
+          <img
+            src="images/smileTrack-conversation.png"
+            alt="[시각화 자료] 전매니저와 이메일 대화"
+            style="display: block; margin: 0 auto; width: 50%; height: auto"
+          />
+
+          <br />
+
+          <div
+            style="
+              background: var(--surface);
+              padding: 16px;
+              border-radius: 6px;
+              border: 1px solid var(--line);
+              font-size: 13.5px;
+              color: var(--text);
+            "
+          >
+            <strong
+              style="display: block; margin-bottom: 6px; color: var(--primary)"
+              data-ko="💡 이메일에서 도출한 핵심 요구사항 요약"
+              data-en="💡 Summary of Core Email Insights"
+              >💡 이메일에서 도출한 핵심 요구사항 요약</strong
+            >
+            <ul
+              style="
+                margin: 0;
+                padding-left: 20px;
+                line-height: 1.6;
+                color: var(--muted);
+              "
+            >
+              <li
+                data-ko="기존 소프트웨어(EasyRx)는 주문 접수와 인보이스 발행에는 특화되어 있으나, 제작 과정의 동적인 트래킹이 안 됨."
+                data-en="Existing systems handle registration and billing perfectly but lack real-time visibility into dynamic work-in-progress positions."
+              >
+                기존 소프트웨어(EasyRx)는 주문 접수와 인보이스 발행에는 특화되어
+                있으나, 제작 과정의 동적인 트래킹이 안 됨.
+              </li>
+              <li
+                data-ko="기술자들이 작업 단계마다 'In/Out'을 명확히 체크하지 않고 완료할 때만 스캔하기 때문에, 현재 기공물이 물리적으로 어디 있는지 추측에 의존함."
+                data-en="Technicians only scan upon final task completion, forcing management to guess the physical location of items between major milestones."
+              >
+                기술자들이 작업 단계마다 'In/Out'을 명확히 체크하지 않고 완료할
+                때만 스캔하기 때문에, 현재 기공물이 물리적으로 어디 있는지
+                추측에 의존함.
+              </li>
+              <li
+                data-ko="특정 날짜나 특정 기술자에게 일이 몰리는 병목 현상을 미리 예측할 수 없어 생산 계획 수립이 어려움."
+                data-en="Unable to forecast personnel or daily station overloads, leading to unpredictable scheduling bottlenecks."
+              >
+                특정 날짜나 특정 기술자에게 일이 몰리는 병목 현상을 미리 예측할
+                수 없어 생산 계획 수립이 어려움.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="deep-dive-section">
+        <h2
+          class="section-headline"
+          data-ko="문제 정의와 기술적 분석"
+          data-en="Problem Definition & Deep Dive"
+        >
+          문제 정의와 기술적 분석
+        </h2>
+
+        <article class="panel case-card">
+          <span class="case-badge">CASE 01</span>
+          <h3
+            class="case-title"
+            data-ko="기존 프로그램의 한계 극복: 정적 기록에서 실시간 상태 추적 시스템으로의 전환"
+            data-en="Overcoming Systemic Gaps: Moving from Static Billing Records to Real-Time Dynamic States"
+          >
+            기존 프로그램의 한계 극복: 정적 기록에서 실시간 상태 추적
+            시스템으로의 전환
+          </h3>
+          <div class="case-content">
+            <p
+              data-ko="[문제 정의] 기존 기공소에서는 전산 프로그램이 아예 없었던 것이 아닙니다. 주문을 등록하고 인보이스를 발행하는 프로그램이 있었지만, 이는 단순 기록과 정적 보고서에 가깝다는 한계가 있었습니다. 작업물이 접수된 후 실제로 [스캔 - 디자인 - 3D 프린팅 - 빌드 - 배송]으로 이어지는 단계적 흐름 속에서 지금 당장 어느 단계에 멈춰 서 있는지, 어디서 병목이 터졌는지는 실시간으로 트래킹되지 않아 매번 기공물 상자(Pan)를 직접 찾으러 다녀야 했습니다. 저는 이 문제를 단순 CRUD 게시판이 아닌, 유연하게 변화하는 상태와 타임라인 관리의 문제로 정의했습니다."
+              data-en="[Problem Definition] The lab already utilized management tools, but they operated primarily as static ledger-books for invoices rather than real-time tracking engines. Once a case was submitted, there was no logical window into which specific workstation it was idling at, or why a backup occurred. I chose to define this not as a simple data-entry log problem, but as a dynamic state and timeline tracking challenge."
+            >
+              <strong>[문제 정의]</strong> 기존 기공소에서는 전산 프로그램이
+              아예 없었던 것이 아닙니다. 주문을 등록하고 인보이스를 발행하는
+              프로그램이 있었지만, 이는 단순 기록과 정적 보고서에 가깝다는
+              한계가 있었습니다. 작업물이 접수된 후 실제로 [스캔 - 디자인 - 3D
+              프린팅 - 빌드 - 배송]으로 이어지는 단계적 흐름 속에서 지금 당장
+              어느 단계에 멈춰 서 있는지, 어디서 병목이 터졌는지는 실시간으로
+              트래킹되지 않아 매번 기공물 상자(Pan)를 직접 찾으러 다녀야
+              했습니다. 저는 이 문제를 단순 CRUD 게시판이 아닌, 유연하게
+              변화하는 상태와 타임라인 관리의 문제로 정의했습니다.
+            </p>
+            <p
+              data-ko="[해결 방식] 메인 테이블에 단순히 현재 상태를 문자열이나 단일 코드 필드로만 덮어쓰면, 도중에 작업이 실패해서 이전 단계로 되돌아가는 반려 상황이 발생했을 때 역추적할 길이 막히게 됩니다. 이를 해결하기 위해 기공물 레코드(LabCase)와 별개로, 상태가 변할 때마다 스냅샷을 찍어 기록하는 상태 이력 테이블(LabCaseProcess)을 1:N 관계로 분리 설계했습니다. 상태가 변경되는 시점, 담당 작업자를 매번 누적하여 저장하도록 강제함으로써, 기존 소프트웨어가 주지 못했던 '실시간 위치 트래킹'과 '공정 지연 분석 데이터'를 완벽히 확보할 수 있는 토대를 만들었습니다."
+              data-en="[Architectural Fix] Overwriting a simple string or single enum status inside the main table wipes out the structural context of why or when a case bounced backward due to a rework (Redo) scenario. I separated the database engine to utilize an explicit 1:N history table (`CaseStatusHistory`). Each time a state changes, the app pushes timestamps, assigned technician IDs, and error reason codes into this history stack, providing genuine tracking transparency and operational forensics."
+            >
+              <strong>[해결 방식]</strong> 메인 테이블에 단순히 현재 상태를
+              문자열이나 단일 코드 필드로만 덮어쓰면, 도중에 작업이 실패해서
+              이전 단계로 되돌아가는 반려 상황이 발생했을 때 역추적할 길이
+              막히게 됩니다. 이를 해결하기 위해 기공물 레코드(LabCase)와 별개로,
+              상태가 변할 때마다 스냅샷을 찍어 기록하는 상태 이력
+              테이블(LabCaseProcess)을 1:N 관계로 분리 설계했습니다. 상태가
+              변경되는 시점, 담당 작업자를 매번 누적하여 저장하도록
+              강제함으로써, 기존 소프트웨어가 주지 못했던 '실시간 위치 트래킹'과
+              '공정 지연 분석 데이터'를 완벽히 확보할 수 있는 토대를
+              만들었습니다.
+            </p>
+          </div>
+        </article>
+
+        <article class="panel case-card">
+          <span class="case-badge">CASE 02</span>
+          <h3
+            class="case-title"
+            data-ko="화면 설계(Figma)를 통한 비즈니스 규칙 정의와 DB 누락 예방"
+            data-en="Figma-Driven Interface Mapping to Bridge Functional Requirements and Relational Database Rules"
+          >
+            화면 설계(Figma)를 통한 비즈니스 규칙 정의와 DB 누락 예방
+          </h3>
+          <div class="case-content">
+            <p
+              data-ko="[문제 정의] 제가 경험했던 치기공 지시서는 일반적인 쇼핑몰 주문서와 완전히 달랐습니다. 환자 이름, 의사 이름뿐만 아니라 보철물 종류(크라운, 임플란트 가이드 등), 상악/하악 구분, 치아 번호, 그리고 기공물이 담기는 상자 번호(Pan #)와 색상 정보까지 촘촘하게 엮여 있었습니다. 도메인 분석 없이 테이블을 마구잡이로 짜면, 특정 보철물 종류에서는 쓰이지 않는 수많은 컬럼들이 무더기로 비어있게 되거나, 정규화가 무너지는 문제가 눈에 선했습니다. 저는 코드를 작성하기 전에 사용자의 화면 입력 흐름을 완벽히 파악해야 데이터 제약 조건을 제대로 세울 수 있다고 정의했습니다."
+              data-en="[Problem Definition] Analysis of the lab manager’s feedback revealed that dental invoices are uniquely complex. Beyond patient and doctor data, they demand specific configurations like upper/lower arch assignments, precise tooth numbering, and distinct pan tracking metrics (e.g., Pan 1234B - color-coded baskets). Building a layout blindly risks leaving an unnormalized, null-heavy database schema. I recognized that mapping input patterns must serve as the foundation for relational structural rules."
+            >
+              <strong>[문제 정의]</strong> 제가 경험했던 치기공 지시서는
+              일반적인 쇼핑몰 주문서와 완전히 달랐습니다. 환자 이름, 의사
+              이름뿐만 아니라 보철물 종류(크라운, 임플란트 가이드 등), 상악/하악
+              구분, 치아 번호, 그리고 기공물이 담기는 상자 번호(Pan #)와 색상
+              정보까지 촘촘하게 엮여 있었습니다. 도메인 분석 없이 테이블을
+              마구잡이로 짜면, 특정 보철물 종류에서는 쓰이지 않는 수많은
+              컬럼들이 무더기로 비어있게 되거나, 정규화가 무너지는 문제가 눈에
+              선했습니다. 저는 코드를 작성하기 전에 사용자의 화면 입력 흐름을
+              완벽히 파악해야 데이터 제약 조건을 제대로 세울 수 있다고
+              정의했습니다.
+            </p>
+            <p
+              data-ko="[해결 방식] 실제 사용자가 정보를 입력할 폼 레이아웃을 Figma로 꼼꼼하게 먼저 시각화해 보았습니다. 화면 UI를 이메일 요구사항 요약과 대조하면서, 공통으로 들어갈 데이터(환자명, 마감일, 고유 케이스 번호)와 보철물 종류에 따라 선택적으로 채워지는 가변 데이터를 명확하게 구분해냈습니다. 이 화면 흐름을 바탕으로 데이터베이스 설계 단계에서 다형성을 고려한 스펙 테이블들을 유기적으로 분리시켰습니다. 덕분에 테이블 정규화 수준을 크게 높일 수 있었고, 필수 데이터가 누락되는 휴먼 에러를 DB 제약 조건 레벨에서 튼튼하게 방어해 낼 수 있었습니다."
+              data-en="[Architectural Fix] I structured the interface pathways visually within Figma blueprints beforehand. Comparing the interactive interface with the manager's checklist allowed me to cleanly split baseline shared attributes (Patient indexes, Deadlines) away from dynamic, task-specific details. This reverse-engineered modeling process optimized database normalization, successfully isolating sparse elements and securing structural integrity at the database level."
+            >
+              <strong>[해결 방식]</strong> 실제 사용자가 정보를 입력할 폼
+              레이아웃을 Figma로 꼼꼼하게 먼저 시각화해 보았습니다. 화면 UI를
+              이메일 요구사항 요약과 대조하면서, 공통으로 들어갈 데이터(환자명,
+              마감일, 고유 케이스 번호)와 보철물 종류에 따라 선택적으로 채워지는
+              가변 데이터를 명확하게 구분해냈습니다. 이 화면 흐름을 바탕으로
+              데이터베이스 설계 단계에서 다형성을 고려한 스펙 테이블들을
+              유기적으로 분리시켰습니다. 덕분에 테이블 정규화 수준을 크게 높일
+              수 있었고, 필수 데이터가 누락되는 휴먼 에러를 DB 제약 조건
+              레벨에서 튼튼하게 방어해 낼 수 있었습니다.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section style="margin-bottom: 6px">
+        <h2
+          class="section-headline"
+          data-ko="배운 점 및 성장"
+          data-en="Lessons Learned & Growth"
+        >
+          배운 점 및 성장
+        </h2>
+        <div
+          class="panel"
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            padding: 24px;
+          "
+        >
+          <div
+            class="growth-box"
+            style="display: flex; flex-direction: column; gap: 8px"
+          >
+            <h4
+              style="
+                font-size: 16px;
+                font-weight: 600;
+                color: var(--text);
+                margin: 0;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+              "
+            >
+              <span
+                class="material-symbols-outlined"
+                style="color: var(--text); font-size: 22px"
+                >architecture</span
+              >
+              <span
+                data-ko="설계가 먼저라는 소프트웨어 개발 원칙의 가치"
+                data-en="Deep Apprehension of 'Design First' Development Flow"
+                >설계가 먼저라는 소프트웨어 개발 원칙의 가치</span
+              >
+            </h4>
+            <p
+              style="
+                font-size: 14px;
+                color: var(--muted);
+                line-height: 1.65;
+                margin: 0;
+                padding-left: 30px;
+              "
+              data-ko="비즈니스 요구사항과 실제 데이터의 흐름을 꼼꼼하게 쪼개보지 않고 코딩부터 시작하면 나중에 고치는 비용이 훨씬 더 크다는 소중한 교훈을 얻었습니다. 화면 기획과 DB 제약 조건을 미리 맞춰보는 탄탄한 설계 과정이, 복잡한 로직을 개발할 때 흔들리지 않게 지탱해 주는 나침반이 된다는 것을 배운 프로젝트였습니다."
+              data-en="I learned that writing code before completely mapping the target domain boundaries results in significant technical debt. This project proved that spending time harmonizing interface flows and database rules acts as a critical compass, keeping development stable through heavy features."
+            >
+              비즈니스 요구사항과 실제 데이터의 흐름을 꼼꼼하게 쪼개보지 않고
+              코딩부터 시작하면 나중에 고치는 비용이 훨씬 더 크다는 소중한
+              교훈을 얻었습니다. 화면 기획과 DB 제약 조건을 미리 맞춰보는 탄탄한
+              설계 과정이, 복잡한 로직을 개발할 때 흔들리지 않게 지탱해 주는
+              나침반이 된다는 것을 배운 프로젝트였습니다.
+            </p>
+          </div>
+
+          <div
+            style="border-bottom: 1px solid var(--line); margin: 0 4px"
+          ></div>
+
+          <div
+            class="growth-box"
+            style="display: flex; flex-direction: column; gap: 8px"
+          >
+            <h4
+              style="
+                font-size: 16px;
+                font-weight: 600;
+                color: var(--text);
+                margin: 0;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+              "
+            >
+              <span
+                class="material-symbols-outlined"
+                style="color: var(--text); font-size: 22px"
+                >translate</span
+              >
+              <span
+                data-ko="진짜 문제를 찾아 기술로 풀어내는 주도적인 소통 능력"
+                data-en="Proactive Communication in Transforming Real-World Gaps into Digital Logic"
+                >진짜 문제를 찾아 기술로 풀어내는 주도적인 소통 능력</span
+              >
+            </h4>
+            <p
+              style="
+                font-size: 14px;
+                color: var(--muted);
+                line-height: 1.65;
+                margin: 0;
+                padding-left: 30px;
+              "
+              data-ko="단순히 주어진 스펙대로만 개발하는 사람이 아니라, 현업의 흐름을 직접 분석하고 한 단계 더 들어가 질문을 던지며 시스템을 구상해 나가는 문제 정의형 주니어 개발자로 성장할 수 있었습니다. 특히 아날로그적 틈새와 기존 전산 프로그램 사이의 간극을 포착하여 정형화된 데이터 모델로 변환시키는 전 과정을 홀로 조율하며 큰 성취감과 성장을 경험했습니다."
+              data-en="I matured into a problem-defining junior developer who can ask deeper contextual questions and shape systems, rather than just coding pre-assigned specs. Bridging operational gaps with a resilient data model has empowered my engineering ownership."
+            >
+              단순히 주어진 스펙대로만 개발하는 사람이 아니라, 현업의 흐름을
+              직접 분석하고 한 단계 더 들어가 질문을 던지며 시스템을 구상해
+              나가는 문제 정의형 주니어 개발자로 성장할 수 있었습니다. 특히
+              아날로그적 틈새와 기존 전산 프로그램 사이의 간극을 포착하여
+              정형화된 데이터 모델로 변환시키는 전 과정을 홀로 조율하며 큰
+              성취감과 성장을 경험했습니다.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script src="components.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

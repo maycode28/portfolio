@@ -1,61 +1,746 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ORDA - May Kim</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="index.html">May Kim</a>
-    <button class="menu-button" type="button" aria-label="메뉴 열기" aria-expanded="false">
-      <span class="material-symbols-outlined">menu</span>
-    </button>
-    <nav class="site-nav" aria-label="주요 메뉴">
-      <a href="index.html#home">홈</a>
-      <a href="index.html#about">소개</a>
-      <a href="index.html#skills">기술</a>
-      <a class="active" href="index.html#projects">프로젝트</a>
-      <a href="index.html#education">교육</a>
-      <a href="index.html#contact">연락처</a>
-    </nav>
-  </header>
-  <main class="detail-main">
-    <a class="back-link" href="index.html#projects"><span class="material-symbols-outlined">arrow_back</span> 프로젝트로 돌아가기</a>
-    <section class="detail-hero">
-      <div>
-        <p class="eyebrow">Team Project</p>
-        <h1>ORDA</h1>
-        <p class="hero-line">등산의 모든 흐름을 하나로 연결하는 서비스</p>
-        <p>탐색, 기록, 인증, 회고를 연결하는 모바일 웹 서비스입니다. 사용자가 등산 코스를 계획하고, 실제 등반 데이터를 기록하며, 완료 후 데이터를 기반으로 성취를 인증할 수 있도록 설계했습니다.</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ORDA - Project Detail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <site-header></site-header>
+
+    <main class="detail-main">
+      <div class="back-nav">
+        <a href="index.html#projects" class="back-link">
+          <span class="material-symbols-outlined" style="font-size: 16px"
+            >arrow_back</span
+          >
+          <span data-ko="프로젝트 목록으로 돌아가기" data-en="Back to Projects"
+            >프로젝트 목록으로 돌아가기</span
+          >
+        </a>
       </div>
-      <aside class="panel">
-        <h3>My Role</h3>
-        <p>고도 데이터 처리 로직, 세션 상세 및 리플레이 뷰, 공통 API 아키텍처 설계를 담당했습니다.</p>
-      </aside>
-    </section>
-    <section class="detail-grid">
-      <div class="panel">
-        <h2>Problem Solving</h2>
-        <div class="feature-list">
-          <article><h3>GPS 데이터 보정</h3><p>모바일 GPS 노이즈와 튀는 좌표를 줄이기 위한 필터링 로직을 적용했습니다.</p></article>
-          <article><h3>DEM 기반 고도 처리</h3><p>좌표 기반 고도 보정 파이프라인으로 고도 프로필 정확도를 개선했습니다.</p></article>
-          <article><h3>OOM 이슈 해결</h3><p>대용량 트랙 로그를 스트리밍 파싱과 청크 단위 저장으로 처리했습니다.</p></article>
+
+      <section class="project-header">
+        <span
+          class="project-meta"
+          data-ko="팀 프로젝트 (팀장)&nbsp;&nbsp;&nbsp;2026.03 - 2026.04"
+          data-en="Team Project (Team Leader)&nbsp;&nbsp;&nbsp;Mar 2026 - Apr 2026"
+          >팀 프로젝트 (팀장)&nbsp;&nbsp;&nbsp;2026.03 - 2026.04</span
+        >
+        <h1 class="project-title">ORDA</h1>
+        <p
+          class="project-subtitle"
+          data-ko="GPS 기반 등산 기록, 정상 인증, 경로 리플레이 기능을 제공하는 등산 플랫폼"
+          data-en="Spatial Data Pipeline Purification & Mountain Trail Visualization Platform"
+        >
+          GPS 기반 등산 기록, 정상 인증, 경로 리플레이 기능을 제공하는 등산
+          플랫폼
+        </p>
+
+        <div
+          class="panel"
+          style="
+            border-left: 4px solid var(--text);
+            border-radius: 0 6px 6px 0;
+            background: var(--surface-soft);
+            padding: 20px;
+          "
+        >
+          <p
+            style="
+              margin: 0;
+              font-size: 15px;
+              line-height: 1.6;
+              color: var(--text);
+            "
+            data-ko="실시간 위치 추적, 난이도 지도, 고도 프로파일, 개인 통계 기능을 통해 사용자가 자신의 산행 데이터를 직관적으로 기록하고 시각화하며 관리할 수 있도록 구현한 지도 기반 서비스입니다."
+            data-en="A map-based service that enables users to intuitively record, visualize, and manage their hiking activities through real-time location tracking, difficulty maps, elevation profiles, and personal statistics."
+          >
+            실시간 위치 추적, 난이도 지도, 고도 프로파일, 개인 통계 기능을 통해
+            사용자가 자신의 산행 데이터를 직관적으로 기록하고 시각화하며 관리할
+            수 있도록 구현한 지도 기반 서비스입니다.
+          </p>
+
+          <div class="demo-banner">
+            <div class="link-group">
+              <a
+                href="https://orda-frontend.vercel.app"
+                target="_blank"
+                rel="noreferrer"
+                class="demo-link-btn"
+              >
+                <span class="material-symbols-outlined" style="font-size: 18px"
+                  >open_in_new</span
+                >
+                <span data-ko="라이브 데모 보러가기" data-en="Launch Live Demo"
+                  >라이브 데모 보러가기</span
+                >
+              </a>
+              <a
+                href="https://github.com/Leeeydia/orda-backend"
+                target="_blank"
+                rel="noreferrer"
+                class="demo-link-btn secondary"
+              >
+                <span class="material-symbols-outlined" style="font-size: 18px"
+                  >code</span
+                >
+                <span data-ko="GitHub 저장소" data-en="GitHub Repository"
+                  >GitHub 저장소</span
+                >
+              </a>
+            </div>
+            <div class="credentials-box">
+              <div>
+                <span data-ko="테스트 아이디:" data-en="Test ID:"
+                  >테스트 아이디:</span
+                >
+                <code>test@orda.com</code>
+              </div>
+              <div>
+                <span data-ko="비밀번호:" data-en="Password:">비밀번호:</span>
+                <code>xptmxm1234!</code>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <aside class="panel">
-        <h2>Tech Stack</h2>
-        <div class="tags">
-          <span>React</span><span>TypeScript</span><span>Spring Boot</span><span>PostgreSQL</span><span>PostGIS</span><span>Docker</span><span>Cloud Run</span><span>Supabase</span>
+      </section>
+
+      <section class="detail-grid">
+        <div class="panel">
+          <h2
+            style="
+              font-size: 12px;
+              color: var(--subtle);
+              text-transform: uppercase;
+              letter-spacing: 0.1em;
+              border-bottom: 1px solid var(--line);
+              padding-bottom: 8px;
+              margin-bottom: 16px;
+            "
+            data-ko="주요 역할 및 기여"
+            data-en="My Roles & Contributions"
+          >
+            주요 역할 및 기여
+          </h2>
+          <ul class="role-list">
+            <li>
+              <strong
+                data-ko="공간 데이터 파이프라인 및 지도 기능 설계"
+                data-en="Spatial Data Pipeline & Map Feature Development"
+                >공간 데이터 파이프라인 및 지도 기능 설계</strong
+              >
+              <span
+                data-ko="등산로 공간 데이터 수집, 정제 파이프라인과 고도 보정 방식을 설계하고, 공용 지도 컴포넌트 및 지도 기반 기능 구현을 담당"
+                data-en="Designed the spatial data ingestion and refinement pipeline, planned the elevation correction approach, and built reusable map components and map-based features."
+                >등산로 공간 데이터 수집, 정제 파이프라인과 고도 보정 방식을
+                설계하고, 공용 지도 컴포넌트 및 지도 기반 기능 구현을 담당</span
+              >
+            </li>
+            <li>
+              <strong
+                data-ko="핵심 사용자 경험 개발"
+                data-en="Core User Experience Development"
+                >핵심 사용자 경험 개발</strong
+              >
+              <span
+                data-ko="세션 상세 페이지와 경로 리플레이 기능을 개발하고, GPS 기록과 지도 데이터를 연동하여 등산 활동을 직관적으로 탐색할 수 있는 사용자 경험 구현"
+                data-en="Developed the session detail page and route replay features, integrating GPS records with map data to provide an intuitive hiking activity experience."
+                >세션 상세 페이지와 경로 리플레이 기능을 개발하고, GPS 기록과
+                지도 데이터를 연동하여 등산 활동을 직관적으로 탐색할 수 있는
+                사용자 경험 구현</span
+              >
+            </li>
+            <li>
+              <strong
+                data-ko="공통 개발 기준 수립 및 협업 리딩"
+                data-en="Development Standards & Team Collaboration"
+                >공통 개발 기준 수립 및 협업 리딩</strong
+              >
+              <span
+                data-ko="팀장으로서 프론트엔드, 백엔드 간 공통 API 응답 규격과 공용 컴포넌트 구조를 제안하고, 일관된 개발 기준을 정리하며 협업을 조율"
+                data-en="As the team lead, proposed shared API response standards and reusable component structures, helping the team work with consistent development conventions."
+                >팀장으로서 프론트엔드, 백엔드 간 공통 API 응답 규격과 공용
+                컴포넌트 구조를 제안하고, 일관된 개발 기준을 정리하며 협업을
+                조율</span
+              >
+            </li>
+          </ul>
         </div>
-      </aside>
-    </section>
-  </main>
-  <script src="script.js"></script>
-</body>
+
+        <div class="panel">
+          <h2
+            style="
+              font-size: 12px;
+              color: var(--subtle);
+              text-transform: uppercase;
+              letter-spacing: 0.1em;
+              border-bottom: 1px solid var(--line);
+              padding-bottom: 8px;
+              margin-bottom: 16px;
+            "
+            data-ko="Tech Stack"
+            data-en="Tech Stack"
+          >
+            Tech Stack
+          </h2>
+          <div class="tag-container">
+            <span class="tech-tag">Spring Boot</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">PostGIS</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">GCP Cloud Run</span>
+          </div>
+          <h3
+            style="
+              font-size: 11px;
+              color: var(--subtle);
+              text-transform: uppercase;
+              margin-bottom: 6px;
+              font-weight: 700;
+            "
+            data-ko="Key Libraries"
+            data-en="Key Libraries"
+          >
+            Key Libraries
+          </h3>
+          <p
+            style="
+              margin: 0;
+              font-size: 14px;
+              color: var(--text);
+              font-weight: 500;
+            "
+          >
+            Hibernate Spatial, MapLibre GL, Axios
+          </p>
+        </div>
+      </section>
+
+      <section class="deep-dive-section">
+        <h2
+          class="section-headline"
+          data-ko="문제 해결과 기술적 고민"
+          data-en="Problem Solving & Deep Dive"
+        >
+          문제 해결과 기술적 고민
+        </h2>
+
+        <article class="panel case-card">
+          <span class="case-badge">CASE 01</span>
+          <h3
+            class="case-title"
+            data-ko="OSM 및 공공데이터 등산로 표준화 파이프라인의 좌표계 오류 및 병합 로직 결함"
+            data-en="Coordinate Projection Discrepancies & Stage A Merging Flaws"
+          >
+            OSM 및 공공데이터 등산로 표준화 파이프라인의 좌표계 오류 및 병합
+            로직 결함
+          </h3>
+          <div class="case-content">
+            <img
+              src="images/ORDA-troubleshooting1.jpg"
+              alt="[시각화 자료] 공간 분석 레이어 상에서 GRS80 투영 해석 보정 전/후의 등산로 궤적 오차 비교 화면"
+            />
+            <br />
+            <p
+              data-ko="[증상] 시각화해서 확인했을 때 일부 등산로 선형이 한국 내륙을 벗어나 동해 바다 및 대만 인근에 찍히는 현상이 발생했습니다."
+              data-en="[Symptom] Trail geometries rendered improperly over the East Sea and near Taiwan during spatial visual inspection."
+            >
+              <strong>[증상]</strong> 시각화해서 확인했을 때 일부 등산로 선형이
+              한국 내륙을 벗어나 동해 바다 및 대만 인근에 찍히는 현상이
+              발생했습니다.
+            </p>
+            <p
+              data-ko="[원인 추적 및 해결] 처음에는 일부 데이터만 동해 바다에 나타나 병합 시 문제라고 생각했는데 문제가 있는 데이터의 출처가 모두 공공 데이터라는 것을 확인하고 좌표계 문제를 의심했습니다. 최종 원인은 원본 데이터가 GRS80 타원체 기반 TM 중부원점(20, 60) 투영 기준으로 설계되었음을 판명하고 코드 수정으로 바로 잡았습니다."
+              data-en="[Root Cause & Fix] Initially shifted from EPSG:2097 to EPSG:5179 to fix the inland clusters. For the remaining Taiwanese offsets, a deep audit of the original specifications revealed that the input data was projected on the GRS80 TM Central Meridian (20, 60). Correcting this resolved the offset completely."
+            >
+              <strong>[원인 추적 및 해결]</strong> 처음에는 일부 데이터만 동해
+              바다에 나타나 병합 시 문제라고 생각했는데 문제가 있는 데이터의
+              출처가 모두 공공 데이터라는 것을 확인하고 좌표계 문제를
+              의심했습니다. 최종 원인은 원본 데이터가 GRS80 타원체 기반 TM
+              중부원점(20, 60) 투영 기준으로 설계되었음을 판명하고 코드 수정으로
+              바로 잡았습니다.
+            </p>
+            <p
+              data-ko="[예외 및 로직 고도화] 분석 중 발생한 음수 X축 값에 대해 False Easting 누락 오류로 오해하기 쉬웠으나, 실제 데이터 분포 조사 결과 백령도 지형의 예외적 특성임을 포착하여 수동 오보정을 방지했습니다. 또한 좌표계 정상화 직후 그동안 가려져 있던 'A단계 병합 로직 결함(공공데이터와 OSM 60% 중복 시 유효 속성을 이관하지 않고 OSM을 폐기하여 정보 손실 발생)'을 도출, 유효 속성 보존 가이드라인을 수립하고 통계 로그 보강을 완수했습니다."
+              data-en="[Edge Case & Logic Refinement] Negative X values were scrutinized and verified as valid geographical positions for Baengnyeongdo rather than a False Easting bug. Furthermore, fixing the projection uncovered a critical flaw in the Stage A merging logic: when public and OSM paths overlapped by 60%, OSM was discarded without transferring its metadata. This was fixed by writing an attribute preservation rule, and adding telemetry."
+            >
+              <strong>[예외 및 로직 고도화]</strong> 분석 중 발생한 음수 X축
+              값에 대해 False Easting 누락 오류로 오해하기 쉬웠으나, 실제 데이터
+              분포 조사 결과 백령도 지형의 예외적 특성임을 포착하여 수동
+              오보정을 방지했습니다. 또한 좌표계 정상화 직후 그동안 가려져 있던
+              'A단계 병합 로직 결함(공공데이터와 OSM 60% 중복 시 유효 속성을
+              이관하지 않고 OSM을 폐기하여 정보 손실 발생)'을 도출, 유효 속성
+              보존 가이드라인을 수립하고 통계 로그 보강을 완수했습니다.
+            </p>
+          </div>
+        </article>
+
+        <article class="panel case-card">
+          <span class="case-badge">CASE 02</span>
+          <h3
+            class="case-title"
+            data-ko="서로 다른 산의 등산로 네트워크 결합 버그와 데이터 소스 커버리지의 한계"
+            data-en="Inter-Mountain Network Graph Disconnection & Data Source Coverage Constraints"
+          >
+            서로 다른 산의 등산로 네트워크 결합 버그와 데이터 소스 커버리지의
+            한계
+          </h3>
+          <div class="case-content">
+            <p
+              data-ko="[증상] 등산로 네트워크 구축 단계에서 산과 산 사이의 경계가 무너지고 서로 다른 산의 등산로가 하나의 거대한 네트워크 그래프처럼 강제 연결되는 현상이 확인되었습니다."
+              data-en="[Symptom] Unintended graph connectivity where independent mountain networks merged into a single linked topology."
+            >
+              <strong>[증상]</strong> 등산로 네트워크 구축 단계에서 산과 산
+              사이의 경계가 무너지고 서로 다른 산의 등산로가 하나의 거대한
+              네트워크 그래프처럼 강제 연결되는 현상이 확인되었습니다.
+            </p>
+            <p
+              data-ko="[원인 추적 및 개선] build_network.py를 분석한 결과, NodeRegistry가 산 식별자(MNTN_CODE, mountain_name) 없이 (lon, lat) 좌표만으로 노드를 생성하고 있었습니다. 실제 데이터를 확인한 결과, 서로 다른 산의 등산로가 동일 좌표에서 만나 하나의 노드로 처리되는 사례가 1,524개 확인되었습니다. 이를 해결하기 위해 노드 식별 기준을 (lon, lat, mountain_key)로 변경해 같은 좌표라도 산이 다르면 서로 다른 노드로 취급하도록 수정했습니다. 다만 노드 분리 이후 prune_dangling_edges()가 작은 고립 구간을 제거하는 과정에서 정상 공공 등산로까지 함께 삭제하는 문제가 발생했습니다. 이를 보완하기 위해 official/PUBLIC 데이터는 pruning 대상에서 제외하고, edge 병합 과정에서도 mountain_key가 유지되도록 수정했습니다."
+              data-en="[Investigation & Resolution] In build_network.py, NodeRegistry created nodes solely from (lon, lat) coordinates without mountain identifiers such as MNTN_CODE or mountain_name. After validating the dataset, I found 1,524 cases where trails from different mountains shared the same coordinate and were merged into a single node. To resolve this, I changed the node identity rule to (lon, lat, mountain_key), ensuring that trails from different mountains remain separated even when coordinates overlap. However, this introduced a side effect where prune_dangling_edges() removed legitimate public trails while cleaning isolated segments. To prevent this, I excluded official/PUBLIC data from pruning and preserved mountain_key during edge merging."
+            >
+              <strong>[원인 추적 및 개선]</strong> build_network.py를 분석한
+              결과, NodeRegistry가 산 식별자(MNTN_CODE, mountain_name) 없이
+              (lon, lat) 좌표만으로 노드를 생성하고 있었습니다. 실제 데이터를
+              확인한 결과, 서로 다른 산의 동일 좌표에서 만나 하나의 노드로
+              처리되는 사례가 1,524개 확인되었습니다. 이를 해결하기 위해 노드
+              식별 기준을 (lon, lat, mountain_key)로 변경해 같은 좌표라도 산이
+              다르면 서로 다른 노드로 취급하도록 수정했습니다. 다만 노드 분리
+              이후 prune_dangling_edges()가 작은 고립 구간을 제거하는 과정에서
+              정상 공공 등산로까지 함께 삭제하는 문제가 발생했습니다. 이를
+              보완하기 위해 official/PUBLIC 데이터는 pruning 대상에서 제외하고,
+              edge 병합 과정에서도 mountain_key가 유지되도록 수정했습니다.
+            </p>
+            <p
+              data-ko="[도메인 인사이트] OSM 데이터를 제거하고 공공데이터만 확인해 보니 계룡산 금수봉과 같은 유명 산의 등산로가 비어 있거나 충분히 제공되지 않는 경우가 확인되었습니다. 이를 통해 '다른 산이 연결된다'는 문제가 단순한 네트워크 버그가 아니라, 공공데이터만으로는 ORDA가 목표로 하는 산 커버리지를 제공하기 어렵다는 문제와도 연결되어 있음을 알게 되었습니다. 결국 실제 등산 코스가 더 풍부하게 포함된 GPX 기반 데이터로 방향을 전환했습니다. 다만 GPX 데이터 역시 공유 구간과 중복 선형이 많아 별도의 정제 작업이 필요하다는 점을 확인했고, 우선 실제 등산 테스트를 진행한 뒤 후속 정제를 진행하기로 결정했습니다."
+              data-en="[Domain Insight] After removing OSM and inspecting only the public dataset, I found that well-known mountains such as Geumsubong in Gyeryongsan were missing or insufficiently represented. This revealed that the issue was not just a network bug but also a data coverage limitation: public datasets alone could not provide the mountain coverage required by ORDA. As a result, I switched to GPX-based trail data, which offered richer real-world routes. However, GPX data introduced its own challenges, including shared segments and duplicate geometries. I therefore prioritized field testing first and planned additional network refinement as a follow-up task."
+            >
+              <strong>[도메인 인사이트]</strong> OSM 데이터를 제거하고
+              공공데이터만 확인해 보니 계룡산 금수봉과 같은 유명 산의 등산로가
+              비어 있거나 충분히 제공되지 않는 경우가 확인되었습니다. 이를 통해
+              '다른 산이 연결된다'는 문제가 단순한 네트워크 버그가 아니라,
+              공공데이터만으로는 ORDA가 목표로 하는 산 커버리지를 제공하기
+              어렵다는 문제와도 연결되어 있음을 알게 되었습니다. 결국 실제 등산
+              코스가 더 풍부하게 포함된 GPX 기반 데이터로 방향을 전환했습니다.
+              다만 GPX 데이터 역시 공유 구간과 중복 선형이 많아 별도의 정제
+              작업이 필요하다는 점을 확인했고, 우선 실제 등산 테스트를 진행한 뒤
+              후속 정제를 진행하기로 결정했습니다.
+            </p>
+          </div>
+        </article>
+
+        <article class="panel case-card">
+          <span class="case-badge">CASE 03</span>
+          <h3
+            class="case-title"
+            data-ko="리플레이 기능 구현을 위한 런타임 제어용 멀티 시간축 분리 설계"
+            data-en="Multi-Timeline Architecture for Interactive Activity Replay"
+          >
+            리플레이 기능 구현을 위한 런타임 제어용 멀티 시간축 분리 설계
+          </h3>
+          <div class="case-content">
+            <img
+              src="images/ORDA-troubleshooting2.gif"
+              alt="[시각화 자료] 리플레이 영상"
+              style="display: block; margin: 0 auto; width: 30%; height: auto"
+            />
+            <br />
+            <p
+              data-ko="[문제] 단순 등산 기록 시간(actualElapsedSeconds)축만 활용해 리플레이를 재생할 경우, ORDA 서비스 특유의 시네마틱 연출(인트로 오버뷰, 시작점 포커스, 아웃트로 전체 경로 복귀)이 개입될 때 슬라이더의 타임라인 진행률, 카메라 뷰포트 상태, 마커 위치 연산이 통째로 꼬여버리는 구조적 한계가 존재했습니다."
+              data-en="[Challenge] Using only the raw actual elapsed hiking duration broke time indicators, slider progress, and camera interpolation when cinematic sequences (Intro overview, Start focus, Outro summary) were introduced into the sequence."
+            >
+              <strong>[문제]</strong> 단순 등산 기록
+              시간(actualElapsedSeconds)축만 활용해 리플레이를 재생할 경우, ORDA
+              서비스 특유의 시네마틱 연출(인트로 오버뷰, 시작점 포커스, 아웃트로
+              전체 경로 복귀)이 개입될 때 슬라이더의 타임라인 진행률, 카메라
+              뷰포트 상태, 마커 위치 연산이 통째로 꼬여버리는 구조적 한계가
+              존재했습니다.
+            </p>
+            <p
+              data-ko="[시간축 분리 구현] '실제 데이터 시간'과 사용자가 체감하는 '영상 제어 시퀀스 시간'의 도메인을 명확히 분리하여 두 개의 시간축을 분리해서 사용하는 구조를 도입했습니다."
+              data-en="[Implementation] I decoupled the timeline into a dual-track orchestration pattern:"
+            >
+              <strong>[시간축 분리 구현]</strong> '실제 데이터 시간'과 사용자가
+              체감하는 '영상 제어 시퀀스 시간'의 도메인을 명확히 분리하여 두
+              개의 시간축을 분리해서 사용하는 구조를 도입했습니다.
+            </p>
+            <ul style="list-style-type: none; padding-left: 10px">
+              <li
+                data-ko="1) 시퀀스 시간축 (sequenceElapsedMs): 인트로(2.2초)/포커스(1.2초)/본 재생/아웃트로(1.8초)를 포괄하는 전체 런타임 축으로, 슬라이더 핸들러와 단계적 카메라 뷰 모드(intro-overview → focus-start → follow → outro-overview) 전환의 타임라인 기준으로 동작합니다."
+                data-en="1) Sequence Timeline (sequenceElapsedMs): Tracks the entire programmatic lifecycle. Manages the slider UI tracking and step-by-step camera behaviors."
+              >
+                <strong>1) 시퀀스 시간축 (sequenceElapsedMs):</strong>
+                인트로(2.2초)/포커스(1.2초)/본 재생/아웃트로(1.8초)를 포괄하는
+                전체 런타임 축으로, 슬라이더 핸들러와 단계적 카메라 뷰
+                모드(intro-overview → focus-start → follow → outro-overview)
+                전환의 타임라인 기준으로 동작합니다.
+              </li>
+              <li
+                data-ko="2) 실제 데이터 시간축 (currentReplaySeconds): GPS 트랙 로그 정보의 보간 연산, 진행 시간 틱(50ms 단위) 연산 및 정상 마커 노출 시점 연산(verifiedElapsedSec &lt;= currentActualElapsedSeconds) 등 데이터 무결성 검증을 전담합니다."
+                data-en="2) Actual Data Timeline (currentReplaySeconds): Governs internal computations like spatial interpolation, 50ms tick rendering, and coordinate verification triggers."
+              >
+                <strong>2) 실제 데이터 시간축 (currentReplaySeconds):</strong>
+                GPS 트랙 로그 정보의 보간 연산, 진행 시간 틱(50ms 단위) 연산 및
+                정상 마커 노출 시점 연산(verifiedElapsedSec &lt;=
+                currentActualElapsedSeconds) 등 데이터 무결성 검증을 전담합니다.
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="panel case-card">
+          <span class="case-badge">CASE 04</span>
+          <h3
+            class="case-title"
+            data-ko="대용량 DEM GeoTIFF 처리 과정에서 발생한 JVM OOM과 배포 환경 제약 대응"
+            data-en="Handling JVM OOM and Deployment Constraints While Processing Large DEM GeoTIFF Data"
+          >
+            대용량 DEM GeoTIFF 처리 과정에서 발생한 JVM OOM과 배포 환경 제약
+            대응
+          </h3>
+          <div class="case-content">
+            <img
+              src="images/ORDA-troubleshooting3.png"
+              alt="[시각화 자료] OOM 문제 발생과 해결된 로그"
+              style="display: block; margin: 0 auto"
+            />
+            <br />
+            <p
+              data-ko="[문제] 실시간 GPS 위치를 초 단위로 처리해야 했기 때문에, 고도 보정을 위해 매 요청마다 Supabase 원격 스토리지에서 DEM 데이터를 읽어오는 방식은 네트워크 지연으로 인해 현실적으로 사용하기 어려웠습니다. 또한 대한민국 DEM GeoTIFF 파일은 약 300MB 크기로 Git의 단일 파일 업로드 제한(100MB)을 초과해 리포지토리에 직접 포함할 수 없는 상황이었습니다."
+              data-en="[Context] Because GPS positions were processed in near real time, fetching DEM data from remote storage on every request was impractical due to network latency. In addition, the Korea DEM GeoTIFF file was approximately 300MB, exceeding Git's single-file size limit and preventing it from being stored directly in the repository."
+            >
+              <strong>[문제]</strong> 실시간 GPS 위치를 초 단위로 처리해야 했기
+              때문에, 고도 보정을 위해 매 요청마다 Supabase 원격 스토리지에서
+              DEM 데이터를 읽어오는 방식은 네트워크 지연으로 인해 현실적으로
+              사용하기 어려웠습니다. 또한 대한민국 DEM GeoTIFF 파일은 약 300MB
+              크기로 Git의 단일 파일 업로드 제한(100MB)을 초과해 리포지토리에
+              직접 포함할 수 없는 상황이었습니다.
+            </p>
+            <p
+              data-ko="[원인 추적 및 대응] 이를 해결하기 위해 .dockerignore 설정을 조정해 GeoTIFF 파일만 Docker 빌드 과정에서 이미지 내부(/app/data/dem/korea_dem.tif)로 포함하도록 구성했습니다. 그러나 배포 후 DemService가 시작 시점에 GeoTIFF 전체를 메모리로 읽어오는 Eager Load 방식으로 동작하면서 기본 JVM 힙 메모리(Xmx400m)를 초과해 OutOfMemoryError가 발생했습니다."
+              data-en="[Investigation & Resolution] To work around this limitation, I configured the Docker build process to include only the GeoTIFF file inside the image (/app/data/dem/korea_dem.tif). However, DemService eagerly loaded the entire GeoTIFF into memory during startup, which exceeded the default JVM heap size (Xmx400m) and resulted in an OutOfMemoryError."
+            >
+              <strong>[원인 추적 및 대응]</strong> 이를 해결하기 위해
+              .dockerignore 설정을 조정해 GeoTIFF 파일만 Docker 빌드 과정에서
+              이미지 내부(/app/data/dem/korea_dem.tif)로 포함하도록
+              구성했습니다. 그러나 배포 후 DemService가 시작 시점에 GeoTIFF
+              전체를 메모리로 읽어오는 Eager Load 방식으로 동작하면서 기본 JVM
+              힙 메모리(Xmx400m)를 초과해 OutOfMemoryError가 발생했습니다.
+            </p>
+            <p
+              data-ko="[대응 및 개선 방향] Render 무료 플랜의 메모리 제약으로 배포가 어려워지자, 우선 현장 테스트 일정을 맞추기 위해 JVM 옵션을 -Xmx1200m, -Xms512m으로 조정하고 amd64 이미지를 재빌드해 GCP Cloud Run 환경으로 배포를 전환했습니다. 이 과정에서 단순히 메모리를 늘리는 것이 근본적인 해결책이 아니라는 점을 확인했고, 이후 등산로 데이터 정제가 마무리되면 Eager Load를 제거하고 타일 기반 분할과 Lazy Load 방식으로 리팩터링할 계획을 세웠습니다."
+              data-en="[Mitigation & Future Improvements] Because the Render free tier could not provide sufficient memory, I temporarily increased the JVM heap size to -Xmx1200m and -Xms512m, rebuilt the application for amd64, and migrated deployment to GCP Cloud Run to keep field testing on schedule. This experience showed that increasing memory alone was not a fundamental solution, and I planned a future refactor using tile-based partitioning and lazy loading instead of eager loading."
+            >
+              <strong>[대응 및 개선 방향]</strong> Render 무료 플랜의 메모리
+              제약으로 배포가 어려워지자, 우선 현장 테스트 일정을 맞추기 위해
+              JVM 옵션을 -Xmx1200m, -Xms512m으로 조정하고 amd64 이미지를
+              재빌드해 GCP Cloud Run 환경으로 배포를 전환했습니다. 이 과정에서
+              단순히 메모리를 늘리는 것이 근본적인 해결책이 아니라는 점을
+              확인했고, 이후 등산로 데이터 정제가 마무리되면 Eager Load를
+              제거하고 타일 기반 분할과 Lazy Load 방식으로 리팩터링할 계획을
+              세웠습니다.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section style="margin-bottom: 6px">
+        <h2
+          class="section-headline"
+          data-ko="배운 점 및 성장"
+          data-en="Lessons Learned & Growth"
+        >
+          배운 점 및 성장
+        </h2>
+        <div
+          class="panel"
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            padding: 24px;
+          "
+        >
+          <div
+            class="growth-box"
+            style="display: flex; flex-direction: column; gap: 8px"
+          >
+            <h4
+              style="
+                font-size: 16px;
+                font-weight: 600;
+                color: var(--text);
+                margin: 0;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+              "
+            >
+              <span
+                class="material-symbols-outlined"
+                style="color: var(--text); font-size: 22px"
+                >query_stats</span
+              >
+              <span
+                data-ko="수치적 지표를 넘어선 시각적 검증의 중요성"
+                data-en="Visual Auditing over Telemetry"
+                >수치적 지표를 넘어선 시각적 검증의 중요성</span
+              >
+            </h4>
+            <p
+              style="
+                font-size: 14px;
+                color: var(--muted);
+                line-height: 1.65;
+                margin: 0;
+                padding-left: 30px;
+              "
+              data-ko="파이프라인 로그나 데이터베이스 카운트가 정상적인 '성공'을 가리키고 있더라도, 실제 공간 레이어에 올렸을 때 비로소 드러나는 위상적 왜곡และ 좌표 이탈 현상을 목격했습니다. 지도 기반 서비스 엔지니어링은 텍스트나 숫자 지표에만 매몰되지 않고, 데이터 분포를 다차원적으로 '직접 눈으로 증명'해야만 완전한 무결성을 얻을 수 있음을 배웠습니다."
+              data-en="Even if automated processing yields success status codes, visual verification exposed hidden topological distortions. I learned that geospatial data must be audited multi-dimensionally to guarantee full computational trust."
+            >
+              파이프라인 로그나 데이터베이스 카운트가 정상적인 '성공'을 가리키고
+              있더라도, 실제 공간 레이어에 올렸을 때 비로소 드러나는 위상적
+              왜곡과 좌표 이탈 현상을 목격했습니다. 지도 기반 서비스
+              엔지니어링은 텍스트나 숫자 지표에만 매몰되지 않고, 데이터 분포를
+              다차원적으로 '직접 눈으로 증명'해야만 완전한 무결성을 얻을 수
+              있음을 배웠습니다.
+            </p>
+          </div>
+
+          <div
+            style="border-bottom: 1px solid var(--line); margin: 0 4px"
+          ></div>
+
+          <div
+            class="growth-box"
+            style="display: flex; flex-direction: column; gap: 8px"
+          >
+            <h4
+              style="
+                font-size: 16px;
+                font-weight: 600;
+                color: var(--text);
+                margin: 0;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+              "
+            >
+              <span
+                class="material-symbols-outlined"
+                style="color: var(--text); font-size: 22px"
+                >alt_route</span
+              >
+              <span
+                data-ko="기술적 제약 속에서의 현실적인 리스크 매니지먼트"
+                data-en="Pragmatic Infrastructure Workarounds"
+                >기술적 제약 속에서의 현실적인 리스크 매니지먼트</span
+              >
+            </h4>
+            <p
+              style="
+                font-size: 14px;
+                color: var(--muted);
+                line-height: 1.65;
+                margin: 0;
+                padding-left: 30px;
+              "
+              data-ko="데이터 소스의 한계(공공데이터 누락 및 GPX의 중복도)를 빠르게 포착하여 서비스 범위에 맞게 데이터를 재선택하고, 인프라 자원 부족(OOM)이라는 제약 속에서 현장 테스트 일정을 사수하기 위해 Docker 컨텍스트 활용, JVM 메모리 튜닝 및 GCP 마이그레이션과 같은 단계별 차선책을 리드해 내며 현실적이고 주도적인 리스크 관리 능력을 체득했습니다."
+              data-en="By catching dataset flaws early and pivoting to GPX, alongside resolving JVM heap ceilings via GCP deployment to protect timelines, I mastered balancing infrastructure constraints with aggressive business execution."
+            >
+              데이터 소스의 한계(공공데이터 누락 및 GPX의 중복도)를 빠르게
+              포착하여 서비스 범위에 맞게 데이터를 재선택하고, 인프라 자원
+              부족(OOM)이라는 제약 속에서 현장 테스트 일정을 사수하기 위해
+              Docker 컨텍스트 활용, JVM 메모리 튜닝 및 GCP 마이그레이션과 같은
+              단계별 차선책을 리드해 내며 현실적이고 주도적인 리스크 관리 능력을
+              체득했습니다.
+            </p>
+          </div>
+
+          <div
+            style="border-bottom: 1px solid var(--line); margin: 0 4px"
+          ></div>
+
+          <div
+            class="growth-box"
+            style="display: flex; flex-direction: column; gap: 12px"
+          >
+            <h4
+              style="
+                font-size: 16px;
+                font-weight: 600;
+                color: var(--text);
+                margin: 0;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+              "
+            >
+              <span
+                class="material-symbols-outlined"
+                style="color: var(--text); font-size: 22px"
+                >psychology</span
+              >
+              <span
+                data-ko="AI를 활용한 단계별 개발 및 제어 전략"
+                data-en="Step-by-Step Development & Control Strategy with AI"
+                >AI를 활용한 단계별 개발 및 제어 전략</span
+              >
+            </h4>
+            <p
+              style="
+                font-size: 14px;
+                color: var(--muted);
+                line-height: 1.65;
+                margin: 0 0 4px 0;
+                padding-left: 30px;
+              "
+              data-ko="이번 프로젝트에서는 원하는 기능들을 구현하기 위해 조금 더 적극적으로 AI를 활용했습니다. 그러면서 아직 배우는 단계이다 보니, 한 번에 너무 많은 코드를 작성하고 나면 나중에 어디서 버그가 터졌는지 찾기도 어렵고 수정하기도 힘들다는 것을 배웠습니다. 그래서 구현하기 까다롭고 복잡한 기능일수록 작업을 아주 작게 쪼개고, 단계별로 꼼꼼하게 검증하는 저만의 안전한 개발 워크플로우를 구축하여 AI를 똑똑하게 사용하고 리스크를 통제했습니다."
+              data-en="As a growing developer, I realized that writing too much code at once makes debugging and refactoring extremely difficult later on. To manage this, I built a reliable workflow where I leverage AI to break complex requirements into small, manageable steps and validate them progressively."
+            >
+              이번 프로젝트에서는 원하는 기능들을 구현하기 위해 조금 더
+              적극적으로 AI를 활용했습니다. 그러면서 아직 배우는 단계이다 보니,
+              한 번에 너무 많은 코드를 작성하고 나면 나중에 어디서 버그가
+              터졌는지 찾기도 어렵고 수정하기도 힘들다는 것을 배웠습니다. 그래서
+              구현하기 까다롭고 복잡한 기능일수록 작업을 아주 작게 쪼개고,
+              단계별로 꼼꼼하게 검증하는 저만의 안전한 개발 워크플로우를
+              구축하여 AI를 똑똑하게 사용하고 리스크를 통제했습니다.
+            </p>
+
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                margin-left: 30px;
+                margin-top: 4px;
+              "
+            >
+              <div
+                style="
+                  background: var(--surface-soft);
+                  padding: 14px 18px;
+                  border-radius: 6px;
+                  border: 1px solid var(--line);
+                "
+              >
+                <div
+                  style="
+                    font-size: 11px;
+                    font-weight: 700;
+                    color: var(--subtle);
+                    margin-bottom: 6px;
+                    letter-spacing: 0.05em;
+                  "
+                >
+                  STEP 01. 작은 단위로 계획 세우기
+                </div>
+                <div
+                  style="
+                    font-size: 13.5px;
+                    color: var(--text);
+                    line-height: 1.6;
+                  "
+                  data-ko="구현해야 할 복잡한 기능을 AI에게 먼저 설명하고, 이를 아주 작은 작업 단위로 나누어 계획을 세우게 했습니다. 코드를 무작정 짜기 전에 이 플랜이 제 의도와 맞는지 먼저 꼼꼼하게 검토했습니다."
+                  data-en="Asked AI to break down complex features into smaller tasks. Before generating code, I carefully reviewed the proposed plan to ensure it matched my logic."
+                >
+                  구현해야 할 복잡한 기능을 AI에게 먼저 설명하고, 이를 아주 작은
+                  작업 단위로 나누어 계획을 세우게 했습니다. 코드를 무작정 짜기
+                  전에 이 플랜이 제 의도와 맞는지 먼저 꼼꼼하게 검토했습니다.
+                </div>
+              </div>
+
+              <div
+                style="
+                  background: var(--surface-soft);
+                  padding: 14px 18px;
+                  border-radius: 6px;
+                  border: 1px solid var(--line);
+                "
+              >
+                <div
+                  style="
+                    font-size: 11px;
+                    font-weight: 700;
+                    color: var(--subtle);
+                    margin-bottom: 6px;
+                    letter-spacing: 0.05em;
+                  "
+                >
+                  STEP 02. Git Diff로 변경 내역 확인하기
+                </div>
+                <div
+                  style="
+                    font-size: 13.5px;
+                    color: var(--text);
+                    line-height: 1.6;
+                  "
+                  data-ko="하나의 작은 작업이 끝날 때마다 Git Diff를 열어 어떤 코드가 어떻게 변경되었는지 라인 단위로 살펴봤습니다. 자동 생성된 코드가 제가 생각한 방향과 일치하는지 제 수준에서 완벽히 이해하고 넘어갔습니다."
+                  data-en="After completing each small task, I closely examined the Git Diff line by line. This helped me fully understand the changes and ensure they aligned with my project goals."
+                >
+                  하나의 작은 작업이 끝날 때마다 Git Diff를 열어 어떤 코드가
+                  어떻게 변경되었는지 라인 단위로 살펴봤습니다. 자동 생성된
+                  코드가 제가 생각한 방향과 일치하는지 제 수준에서 완벽히
+                  이해하고 넘어갔습니다.
+                </div>
+              </div>
+
+              <div
+                style="
+                  background: var(--surface-soft);
+                  padding: 14px 18px;
+                  border-radius: 6px;
+                  border: 1px solid var(--line);
+                "
+              >
+                <div
+                  style="
+                    font-size: 11px;
+                    font-weight: 700;
+                    color: var(--subtle);
+                    margin-bottom: 6px;
+                    letter-spacing: 0.05em;
+                  "
+                >
+                  STEP 03. PR을 통한 팀원 교차 검증
+                </div>
+                <div
+                  style="
+                    font-size: 13.5px;
+                    color: var(--text);
+                    line-height: 1.6;
+                  "
+                  data-ko="이렇게 제 수준에서 1차 검증이 끝난 코드들을 모아 Pull Request를 올렸습니다. 혼자서는 놓칠 수 있는 제약 사항이나 예외 케이스들을 팀원들과 함께 다시 한 번 교차 검증하며 코드의 안정성을 높였습니다."
+                  data-en="Once I verified the code myself, I submitted a Pull Request. I then cross-checked it with team members to spot hidden edge cases and ensure system stability."
+                >
+                  이렇게 제 수준에서 1차 검증이 끝난 코드들을 모아 Pull
+                  Request를 올렸습니다. 혼자서는 놓칠 수 있는 제약 사항이나 예외
+                  케이스들을 팀원들과 함께 다시 한 번 교차 검증하며 코드의
+                  안정성을 높였습니다.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script src="components.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
